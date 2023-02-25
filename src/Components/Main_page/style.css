@@ -1,8 +1,181 @@
-.Main_page{
-  width: 100%;
-  height: 100vh;
+
+body{
+  padding: 0;
+  margin: 0;
 }
 
-.pictures{
+
+
+/*==========Main page============*/
+
+.Main_page{
   max-width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: rgba(29, 140, 29, 0.822);
+  overflow: hidden;
 }
+
+.picture{
+  max-width: 100%;
+  height: auto;
+}
+
+
+.image-position-1{
+  position: absolute;
+  transform: translateY(-500px);
+
+}
+
+
+.image-position-2{
+  position: absolute;
+  transform: translateX(-1200px);
+
+}
+
+
+.image-position-3{
+  position: absolute;
+  transform: translate3d(-1500px, 500px, 0);
+  
+}
+
+
+.image-position-4{
+  position: absolute;
+  transform: translate3d(1500px, 500px, 0);
+
+  
+}
+
+
+.image-position-5{
+  position: absolute;
+  transform: translateX(2000px);
+
+ 
+}
+
+.image-position-6{
+  position: absolute;
+  transform: translateY(2000px);
+
+
+}
+
+.animation_left{
+  animation-name: image_left;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  transition: 2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.animation-left-down{
+  animation-name: image-left-down;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  transition: 2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.animation-right-down{
+  animation-name: image-right-down;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  transition: 2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.animation-top{
+  animation-name: image_top;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  transition: 2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.animation-down{
+  animation-name: image_down;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  transition: 2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.animation-right{
+  animation-name: image_right;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  transition: 2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@keyframes image_right {
+  from{
+      transform: translateX(2000px);
+  }
+  to{
+    transform: translateX(0);
+  }
+}
+@keyframes image_down {
+  from{
+      transform: translateY(2000px);
+  }
+  to{
+    transform: translateY(0);
+  }
+}
+
+@keyframes image_left {
+  from{
+      transform: translateX(-1200px);
+  }
+  to{
+    transform: translateX(0);
+  }
+}
+
+@keyframes image_top {
+  from{
+      transform: translateY(-500px);
+  }
+  to{
+    transform: translateY(0);
+  }
+}
+
+@keyframes image-left-down{
+  from{
+    transform: translate3d(-1500px, 500px, 0);
+}
+to{
+  transform: translate3d(0,0,0);
+}}
+
+@keyframes image-right-down{
+  from{
+    transform: translate3d(1500px, 500px, 0);
+}
+to{
+  transform: translate3d(0,0,0);
+}}
+
+
+
+/*===================Main page =============*/
