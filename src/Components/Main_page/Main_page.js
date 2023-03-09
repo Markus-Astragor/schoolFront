@@ -50,6 +50,7 @@ function Main_page() {
 
   const [pageInfo, setPageInfo] = useState(false);          /*Usestate для задання появи main-page-info після анімацій гір */
 
+  const [page, setoae] = useState(false);    /*Коментар*/
 
 
 
