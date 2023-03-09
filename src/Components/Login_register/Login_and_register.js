@@ -12,7 +12,7 @@ function Login_and_register() {
     const [greenBtn, setGreenBtn] = useState(true);
     const [greenRegisterBtn, setGreenRegisterBtn] = useState(false);
 
-    const greenLoginBtnChange = () =>{
+    const greenLoginBtnChange = () => {
         setGreenRegisterBtn(false)
         setGreenBtn(true);
     }
@@ -26,7 +26,7 @@ function Login_and_register() {
             <div className="Forms">
                 <div className="buttons_autorization">
                     <div className={greenBtn ? 'Login_btn' : 'Login_btn_no_color'}><NavLink to='/' style={{ textDecoration: 'none', color: 'black', width: '100%', display: 'block' }} onClick={greenLoginBtnChange}>Увійти</NavLink></div>
-                    <div className={greenRegisterBtn ? 'Register' : 'Register_btn_no_color'}><NavLink to='/register' style={{ textDecoration: 'none', color: 'black', width: '100%', display: 'block'}} onClick={greenRegisterBtnChange}>Зареєструватися</NavLink></div>
+                    <div className={greenRegisterBtn ? 'Register' : 'Register_btn_no_color'}><NavLink to='/register' style={{ textDecoration: 'none', color: 'black', width: '100%', display: 'block' }} onClick={greenRegisterBtnChange}>Зареєструватися</NavLink></div>
                 </div>
                 <hr />
                 <Routes>

@@ -12,7 +12,7 @@ function Login() {
         <input type='email' placeholder='Email'></input>
         <input type='password' placeholder='Password'></input>
         <div className='div_submit_btn'>
-        <button className='submit_btn'>Увійти</button>
+          <button className='submit_btn'>Увійти</button>
         </div>
       </form>
     </div>

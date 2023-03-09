@@ -1,3 +1,7 @@
+            /* ---------------Register component -----------------*/
+
+
+/* Register block forms*/
 .Login_and_register{
     background-image: url('../../images/Log_register_images/forest.jpg');
     background-position: center;
@@ -5,6 +9,7 @@
     height: 100vh;
     position: relative;
 }
+
 
 .Forms{
     position: absolute;
@@ -17,10 +22,13 @@
     height: auto;
 }
 
+
 .buttons_autorization{
     display: flex;
     justify-content: space-around;
 }
+
+
 
 .Login_btn, .Register{
     width: 50%;
@@ -28,6 +36,8 @@
     text-align: center;
     padding: 10px 10px;
 }
+
+/* Classes for toggled buttons */
 
 .Login_btn{
     width: 50%;
@@ -37,6 +47,7 @@
     padding: 10px 10px;
 }
 
+
 .Login_btn_no_color{
     width: 50%;
     transition: 0.5s;
@@ -44,6 +55,7 @@
     background-color: white;
     padding: 10px 10px;
 }
+
 
 .Register{
     width: 50%;
@@ -53,6 +65,7 @@
     padding: 10px 10px;
 }
 
+
 .Register_btn_no_color{
     width: 50%;
     transition: 0.5s;
@@ -60,7 +73,7 @@
     background-color: white;
     padding: 10px 10px;
 }
-
+/**************************/
 .Forms > hr{
     margin-top: 20px;
     margin-bottom: 0px;
