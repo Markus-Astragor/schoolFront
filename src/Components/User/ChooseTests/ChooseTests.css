@@ -1,0 +1,28 @@
+.ChooseTests{
+    background-color: var(--background);
+    text-align: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.ChooseTests_header > h2{
+    color:white;
+    font-size: 40px;
+    letter-spacing: 0.25rem;
+}
+
+.Test_arr{
+    width: 50%;
+    margin-top: 50px;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blog-image{
+    width: 200px;
+    height: 200px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}

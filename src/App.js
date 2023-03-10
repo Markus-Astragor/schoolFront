@@ -4,6 +4,7 @@ import Login_and_register from './Components/Login_register/Login_and_register';
 import Main_page from './Components/Main_page/Main_page';
 import { BrowserRouter } from 'react-router-dom';
 import Context from './Components/UseContext/indexContext';
+import ChooseTests from './Components/User/ChooseTests/ChooseTests';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
         <div className="App">
           <Main_page />
           <Login_and_register  GetLoginRef = {GetLoginRef}/>
+          <ChooseTests/>
         </div>
       </BrowserRouter>
     </Context.Provider>
