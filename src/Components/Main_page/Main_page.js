@@ -1,6 +1,7 @@
 import React from 'react';
 import AboutUs from './AboutUs/aboutUs';              /* Імпорт компоненти About Us */
 import { TypeAnimation } from 'react-type-animation';  /*Бібілотека для написання Green School */
+import { useContext } from 'react';
 
 import './style.css';
 
@@ -22,14 +23,20 @@ import circle_1 from '../../images/mainPage/big_circle.png';
 import circle_2 from '../../images/mainPage/normal_circle.png';
 /*===========Circles images========== */
 
+/*Arrow image*/
+import arrow_down from '../../images/mainPage/scroll.png';
+import Context from '../UseContext/indexContext';
+
 
 
 
 function Main_page() {
 
+  const data = useContext(Context);
 
 
-  /*========Mountain Images =======*/
+
+
   /* =========Usestates для картинок гір для анімації=========== */
   const [image1, setImage1] = useState(false);
   const [image2, setImage2] = useState(false);
@@ -50,7 +57,9 @@ function Main_page() {
 
   const [pageInfo, setPageInfo] = useState(false);          /*Usestate для задання появи main-page-info після анімацій гір */
 
-  const [page, setoae] = useState(false);    /*Коментар*/
+  const [aboutRef, setAboutRef] = useState();
+
+
 
 
 
@@ -81,6 +90,13 @@ function Main_page() {
 
 
   }, [])
+
+
+  const GetAboutRef = (ref)=> {   //Функція яка витягує значення ref блоку About US.
+    setAboutRef(ref);
+    console.log(aboutRef);
+  }
+
 
 
 
@@ -124,18 +140,20 @@ function Main_page() {
 
           <div className={pageInfo ?  'main-page-subtitle-block show-subtitle-block' : 'main-page-subtitle-block'}>
               <div className='main-page-subtitle'>Your Online Teacher</div>
-              <button className='main-page-button'>Sign up or Login</button>
+              <button className='main-page-button' onClick={() => {data.LoginRef.current.scrollIntoView({behavior: "smooth"})}}>Sign up or Login</button>
           </div>
           
 
         </div> 
+
+        <img src={arrow_down} onClick = {()=>{aboutRef.current.scrollIntoView({behavior: "smooth"})}} className={pageInfo ? 'main-block-arrow show-arrow' : 'main-block-arrow' }/>
 
       </div>
 
 
 
 
-      <AboutUs />
+      <AboutUs GetAboutRef = {GetAboutRef} />
 
     </div>
   )

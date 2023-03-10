@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useState } from "react"
 import { NavLink } from 'react-router-dom';
 import Login from "./Login";
@@ -8,7 +8,8 @@ import { Route, Routes } from 'react-router-dom';
 
 
 
-function Login_and_register() {
+
+function Login_and_register(props) {
     const [greenBtn, setGreenBtn] = useState(true);
     const [greenRegisterBtn, setGreenRegisterBtn] = useState(false);
 
@@ -21,8 +22,15 @@ function Login_and_register() {
         setGreenBtn(false);
         setGreenRegisterBtn(true);
     }
+
+    const LoginRef = useRef();
+    useEffect(() =>{
+         props.GetLoginRef(LoginRef);
+    },[])
+    
+
     return (
-        <div className="Login_and_register">
+        <div ref = {LoginRef} className="Login_and_register">
             <div className="Forms">
                 <div className="buttons_autorization">
                     <div className={greenBtn ? 'Login_btn' : 'Login_btn_no_color'}><NavLink to='/' style={{ textDecoration: 'none', color: 'black', width: '100%', display: 'block' }} onClick={greenLoginBtnChange}>Увійти</NavLink></div>

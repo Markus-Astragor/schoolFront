@@ -297,3 +297,21 @@ bottom: 130px;
 
 
 }
+
+.main-block-arrow{
+  position: absolute;
+  z-index: 10;
+  bottom: 50px;
+  left: 50%;
+  transform: translate(-50%);
+
+  width: 50px;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.9s;
+}
+
+
+.show-arrow{
+  opacity: 1;
+}
