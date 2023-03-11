@@ -2,10 +2,12 @@ import React from "react";
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import history from '../../../images/ChooseTests/history.png';
+import history from '../../../images/ChooseTests/history.jpg';
 import geography from '../../../images/ChooseTests/geography.png';
-import math from '../../../images/ChooseTests/math.png';
+import math from '../../../images/ChooseTests/math.jpg';
 import ukrainian from '../../../images/ChooseTests/ukrainian.png';
+import ukrainian_literature from '../../../images/ChooseTests/ukrainian_literature.jpg';
+import english from '../../../images/ChooseTests/english.jpg';
 import Test from "./Test";
 
 
@@ -14,10 +16,15 @@ let subjects = [
     { image: geography },
     { image: math },
     { image: ukrainian },
+    {image: ukrainian_literature},
+    {image: english},
     { image: history },
     { image: geography },
     { image: math },
     { image: ukrainian },
+    {image: ukrainian_literature},
+    {image: english}
+
 ]
 
 let subjectsArray = subjects.map(
