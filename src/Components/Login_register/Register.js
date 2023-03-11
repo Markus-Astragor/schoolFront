@@ -8,9 +8,9 @@ function Register() {
         <hr />
       </div>
       <form className='Form_Login'>
-        <input type='email' placeholder='Email'></input>
-        <input type='password' placeholder='Password'></input>
-        <input type='password' placeholder='Password'></input>
+        <input required type='email' placeholder='Email'></input>
+        <input required type='password' placeholder='Password'></input>
+        <input required type='password' placeholder='Password'></input>
         <div className='div_submit_btn'>
         <button className='submit_btn'>Зареєструватися</button>
         </div>
