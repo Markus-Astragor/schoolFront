@@ -24,22 +24,17 @@ function Register() {
     
     const emailText = emailInputRef.current.value;
     const passwordText = passwordRef.current.value;
+    const personText = 'student';   //Замінити на значення person
+    const usernametext = 'Ostap'; // витягнути від юзера
     
 
-    
-    setSignUpData({
-      email: emailText,
+
+    axios.post('http://localhost:8080/register', {
       password: passwordText,
-      person: 'student',
-      username: 'Ostap'
-
+      username: usernametext,
+      email: emailText,
+      person: personText
     })
-
-
-    
-
-
-    axios.post('http://localhost:8080/register', signUpData)
     .then(function (response) {
       console.log(response);
     })
