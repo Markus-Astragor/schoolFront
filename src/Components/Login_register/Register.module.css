@@ -1,0 +1,59 @@
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-color: #8194a0;
+  background-image: none;
+  padding: 10px;
+  width: 200px;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  position: relative;
+ 
+
+  overflow: hidden;
+  border-radius: .25em;
+  display: flex;
+  flex-direction: column;
+}
+
+i::after:hover {
+  color: #23b499;
+  cursor: pointer;
+}
+
+i::after {
+  content: '\25BC';
+  position: absolute;
+  margin-left: 180px;
+  top: -2px;
+  padding: 10px 15px 10px 15px;
+  background: #2b2e2e;
+  cursor: pointer;
+  pointer-events: none;
+  transition: .25s all ease;
+  color: white;
+}
+
+
+
+.RegisterWrapper{
+  width: 60%;
+  margin-top: 110px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.RegisterWrapper>hr {
+  margin-top: 35px;
+}
