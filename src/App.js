@@ -8,14 +8,6 @@ import ChooseTests from './Components/User/ChooseTests/ChooseTests';
 import UserPage from './Components/User';
 function App() {
 
-  const [LoginRef, setLoginRef] = useState();  // State в якому буде зберігатися ref на login  and register block
-
-  const GetLoginRef = (ref) =>{   //Функція яка отримкє значенння ref і записує в State LoginRef
-    setLoginRef(ref);
-  }
-
-
-
 
   return (
 
