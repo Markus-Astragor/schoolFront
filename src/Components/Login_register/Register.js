@@ -2,12 +2,16 @@ import React, { useRef, useState } from 'react';
 import axios from 'axios';
 
 function Register() {
+
+
   const [signUpData, setSignUpData] = useState({
       email: "",
       password: "",
       person: "student",
       username: "Ostap"
   })
+
+
   const emailInputRef = useRef(null);
   const passwordRef = useRef(null);
   const repeatPasswordRef = useRef(null);
@@ -18,24 +22,26 @@ function Register() {
 
     e.preventDefault();
     
-    const email = emailInputRef.current.value;
-    const password = passwordRef.current.value;
+    const emailText = emailInputRef.current.value;
+    const passwordText = passwordRef.current.value;
     
 
     
     setSignUpData({
-      email: email,
-      password: password
+      email: emailText,
+      password: passwordText,
+      person: 'student',
+      username: 'Ostap'
+
     })
 
-    console.log(signUpData);
 
     
 
 
-    axios.post('http://localhost:3000/register', signUpData)
+    axios.post('http://localhost:8080/register', signUpData)
     .then(function (response) {
-      console.log(response.data);
+      console.log(response);
     })
     .catch(function (error) {
       console.log(error);
