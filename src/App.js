@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import Login_and_register from './Components/Login_register/Login_and_register';
 import Main_page from './Components/Main_page/Main_page';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Context from './Components/UseContext/indexContext';
 import ChooseTests from './Components/User/ChooseTests/ChooseTests';
-
+import UserPage from './Components/User';
 function App() {
 
   const [LoginRef, setLoginRef] = useState();  // State в якому буде зберігатися ref на login  and register block
@@ -14,22 +14,22 @@ function App() {
     setLoginRef(ref);
   }
 
-  const value = {}        // Змінна в якій буде зберігатися дані для передачі по UseContext
-  useEffect(()=>{         //UseEffect слідкує коли LoginRef попаде ref yf login то він закине його в ref
-    value.LoginRef = LoginRef
-  }, [LoginRef])
+
 
 
   return (
-    <Context.Provider value={value}>
+
       <BrowserRouter>
         <div className="App">
-          <Main_page />
-          <Login_and_register  GetLoginRef = {GetLoginRef}/>
-          <ChooseTests/>
+
+
+          <Routes>
+            <Route element={<Login_and_register/>} path='/authoriztion'/>
+            <Route element={<Main_page/>} path='/'/>
+          </Routes>
+
         </div>
       </BrowserRouter>
-    </Context.Provider>
   );
 }
 

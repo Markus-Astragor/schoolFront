@@ -26,6 +26,7 @@ import circle_2 from '../../images/mainPage/normal_circle.png';
 /*Arrow image*/
 import arrow_down from '../../images/mainPage/scroll.png';
 import Context from '../UseContext/indexContext';
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -140,7 +141,7 @@ function Main_page() {
 
           <div className={pageInfo ?  'main-page-subtitle-block show-subtitle-block' : 'main-page-subtitle-block'}>
               <div className='main-page-subtitle'>Your Online Teacher</div>
-              <button className='main-page-button' onClick={() => {data.LoginRef.current.scrollIntoView({behavior: "smooth"})}}>Sign up or Login</button>
+              <NavLink to='/authoriztion'  className='main-page-button' >Sign up or Login</NavLink>
           </div>
           
 

@@ -60,12 +60,6 @@ function AboutUs(props)
                     
                 </div>
             </div>
-
-            <img className="about_us_arrow" onClick={() =>{data.LoginRef.current.scrollIntoView({behavior: "smooth"})}} src={Arrow_down} />
-
-            
-
-            
             
         </div>
     );
