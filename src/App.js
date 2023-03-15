@@ -18,6 +18,7 @@ function App() {
           <Routes>
             <Route element={<Login_and_register/>} path='/authoriztion'/>
             <Route element={<Main_page/>} path='/'/>
+            <Route element={<UserPage/>} path='/userpage'/>
           </Routes>
 
         </div>

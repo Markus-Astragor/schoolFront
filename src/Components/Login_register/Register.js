@@ -1,13 +1,15 @@
 import React, { useRef, useState } from 'react';
 import RegisterStyle from  './Register.module.css';
 import axios from 'axios';
-
+import { useNavigate } from 'react-router-dom';
 function Register() {
 
 
   const [emailEror, setEmailEror] = useState(false);
   const [usernameEror, setUsernameEror] = useState(false);
   const [passwordEror, setPasswordEror] = useState(false);
+
+  const navigateUser = useNavigate();
 
   const emailInputRef = useRef(null);
   const passwordRef = useRef(null);
@@ -45,6 +47,14 @@ function Register() {
 
     }).then(function (response) {
         console.log(response);
+        const respPerson = response.data.UserData.person;
+        
+        if(respPerson == 'student')
+        {
+          navigateUser('/userpage');
+        }
+
+
       }).catch(function (error) {
         console.log(error);
       });
