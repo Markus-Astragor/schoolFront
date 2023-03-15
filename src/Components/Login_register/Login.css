@@ -11,11 +11,7 @@
 }
 
 
-.Form_Login > input, button {
-  display: block;
-  margin: 15px;
-  padding: 10px;
-}
+
 
 .div_submit_btn {
   display: flex;
@@ -33,4 +29,11 @@
   background-color: rgb(97, 202, 237);
   color: black;
   cursor: pointer;
+}
+
+
+.Form_Login > input, button {
+  display: block;
+  margin: 8px 15px;
+  padding: 10px;
 }

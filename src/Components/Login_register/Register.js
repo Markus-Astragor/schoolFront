@@ -5,6 +5,10 @@ import axios from 'axios';
 function Register() {
 
 
+  const [emailEror, setEmailEror] = useState(false);
+  const [usernameEror, setUsernameEror] = useState(false);
+  const [passwordEror, setPasswordEror] = useState(false);
+
   const emailInputRef = useRef(null);
   const passwordRef = useRef(null);
   const repeatPasswordRef = useRef(null);
@@ -46,23 +50,36 @@ function Register() {
       });
   }
 
-  function CheckUserValid(email, password, repeatPassword, person, username)
+  function CheckUserValid(email, password, repeatPassword, username)
   {
+      setEmailEror(false);
+      setPasswordEror(false);
+      setUsernameEror(false);
+
+      
+    if(!email.includes('.', '@'))
+    {
+      console.log('inncorect email');
+      setEmailEror(true)
+      return 1;
+    }
+
     if(!(password == repeatPassword))
     {
       console.log('password is different ');
+      setPasswordEror(true);
       return 1;
     }
+
 
     if(username.length < 3)
     {
       console.log('username should consisit of 3 letter minimum');
+      setUsernameEror(true)
       return 1;
     }
 
   }
-
-
 
 
 
@@ -79,14 +96,25 @@ function Register() {
         </div>
         <hr />
       </div>
+
       <form className='Form_Login'>
-        <input required type='email' placeholder='Email' ref={emailInputRef}></input>
-        <input required type='username' placeholder='Name' ref={UsernameRef}></input>
-        <input required type='password' placeholder='Password' ref={passwordRef}></input>
-        <input required type='password' placeholder='Repeat password' ref={repeatPasswordRef}></input>
+        <input className={emailEror ? RegisterStyle.error_border : RegisterStyle.error_border_normal} required type='email' placeholder='Email' ref={emailInputRef}></input>
+        <p className={emailEror ? RegisterStyle.error_block : RegisterStyle.error_block_hidden}>Incorect email</p>
+
+        <input className={usernameEror ? RegisterStyle.error_border : RegisterStyle.error_border_normal} required type='username' placeholder='Name' ref={UsernameRef}></input>
+        <p className={usernameEror ? RegisterStyle.error_block : RegisterStyle.error_block_hidden}>Incorect name</p>
+
+        <input className={passwordEror ? RegisterStyle.error_border : RegisterStyle.error_border_normal} required type='password' placeholder='Password' ref={passwordRef}></input>
+        <p className={passwordEror ? RegisterStyle.error_block : RegisterStyle.error_block_hidden}>Incorect Password</p>
+
+        <input className={passwordEror} required type='password' placeholder='Repeat password' ref={repeatPasswordRef}></input>
+        <p className={passwordEror ? RegisterStyle.error_block : RegisterStyle.error_block_hidden}>Incorect Password</p>
+
         <div className='div_submit_btn'>
           <button className='submit_btn' onClick={(e) => { onSubmit(e) }}>Зареєструватися</button>
         </div>
+
+        
       </form>
     </div>
   )

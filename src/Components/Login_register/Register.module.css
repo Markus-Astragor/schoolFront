@@ -57,3 +57,26 @@ select::-ms-expand {
 .RegisterWrapper>hr {
   margin-top: 35px;
 }
+
+
+.error_block{
+  font-size: 14px;
+  color: red;
+  margin-left: 18px;
+  opacity: 1;
+}
+
+.error_block_hidden{
+  font-size: 14px;
+  color: red;
+  margin-left: 18px;
+  opacity: 0;
+}
+
+
+.error_border{
+  border: 1px solid red;
+}
+.error_border_normal{
+  border: 1px solid black;
+}
