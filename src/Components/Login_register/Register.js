@@ -73,7 +73,6 @@ function Register() {
         <div className={RegisterStyle.select}>
         <i></i>
         <select ref={PerosnRef} option='dropdown'>
-       
           <option value='teacher'>Вчитель</option>
           <option value='student'>Учень</option>
         </select>
