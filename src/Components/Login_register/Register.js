@@ -10,6 +10,8 @@ function Register() {
   const [passwordEror, setPasswordEror] = useState(false);
   const [errorText, setErrorText] = useState('');
 
+  const [waitingResp, setWaitingResp] = useState(false);
+
   const navigateUser = useNavigate();
 
   const emailInputRef = useRef(null);
@@ -37,7 +39,7 @@ function Register() {
       return;
     }
 
-
+    setWaitingResp(true);
 
     axios.post('http://localhost:8080/register', {
 
@@ -47,6 +49,8 @@ function Register() {
       person: personText
 
     }).then(function (response) {
+        setWaitingResp(false);
+
         console.log(response);
         const respPerson = response.data.UserData.person;
 
@@ -63,6 +67,8 @@ function Register() {
 
 
       }).catch(function (error) {
+        setWaitingResp(false);
+
         console.log(error);
 
         const errorMessage = error.response.data[0].msg;
@@ -77,7 +83,7 @@ function Register() {
         if(errorMessage == 'Пароль повинен мінімум 8 символів')
         {
           setPasswordEror(true);
-          setErrorText('Пароль повинен мінімум 8 символів')
+          setErrorText('Пароль повинен мінімум 8 символів');
         }
 
         if(errorMessage == "Ім'я повинно містити мінімум 3 символи")
@@ -163,9 +169,9 @@ function Register() {
         <input className={passwordEror} required type='password' placeholder='Repeat password' ref={repeatPasswordRef}></input>
         <p className={passwordEror ? RegisterStyle.error_block : RegisterStyle.error_block_hidden}>{errorText}</p>
 
-        <div className='div_submit_btn'>
-          <button className='submit_btn' onClick={(e) => { onSubmit(e) }}>Зареєструватися</button>
-          <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div> 
+        <div className={RegisterStyle.div_submit_btn}>
+          <button className={waitingResp ? RegisterStyle.submit_btn_hidden : RegisterStyle.submit_btn } onClick={(e) => { onSubmit(e) }}>Зареєструватися</button>
+          <div class={ waitingResp ? RegisterStyle.lds_ellipsis : RegisterStyle.style={display: 'none'}}><div></div><div></div><div></div><div></div></div> 
         </div>
 
         
