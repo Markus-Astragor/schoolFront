@@ -1,0 +1,60 @@
+
+.Menu_container{
+    height: 100%;
+    width: 100%;
+    /* background: rgb(3,82,0);
+background: linear-gradient(0deg, rgba(3,82,0,1) 15%, rgba(9,121,18,1) 70%, rgba(193,193,193,1) 90%); */
+    background: rgb(25,70,5);
+    background: linear-gradient(0deg, rgba(25,70,5,1) 45%, rgba(119,170,217,1) 97%);
+    box-sizing: border-box;
+
+}
+
+
+.User_avaandname{
+    width: 100%;
+    height: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    box-sizing: border-box;
+    
+}
+
+.circle_forAva{
+    background-color: white;
+    
+    border: 3px solid rgb(169, 169, 169);
+    width: 80px;
+    height: 80px;
+    border-radius: 180px;
+    box-sizing: border-box;
+    
+}
+
+.menu_choice{
+    display: flex;
+    flex-direction: column;
+    margin-top: 90px;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+}
+
+.menu_choice div{
+    font-size: 1rem;
+    font-weight: bolder;
+    color: white;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+.TreeInHead{
+    
+    width: 100%;
+    text-align: center;
+    margin-left: -15px;
+}
+
+.TreeInHeadimg{
+    width: 80%;
+}

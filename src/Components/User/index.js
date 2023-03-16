@@ -4,6 +4,7 @@
 import React, { useState } from "react";
 
 import styles from './style.module.css';
+import Burger_Menu_Student from "./BurgerMenu";
 
 function UserPage()
 {
@@ -28,7 +29,9 @@ function UserPage()
                 <div className={ close ? styles.burger_block_close : styles.burger_block}>
 
                     <button onClick={closeBurger} className={styles.close_burger_btn}>Close</button>
+                    
                     <button onClick={OpenBurger} className={showOpenButton ? styles.open_burger_show :styles.open_burger}>Open</button>
+                    <Burger_Menu_Student />
 
                 </div>
 
