@@ -62,6 +62,7 @@ function Login() {
         setWaitingResp(false);
 
         const errorMessage = err.response.data[0].msg;
+        const erorResponse = err.response.data;
         console.log(errorMessage);
 
         if(errorMessage == 'Неправильний email')
@@ -74,6 +75,12 @@ function Login() {
         {
           setPasswordEror(true);
           setErrorText('Пароль повинен мінімум 8 символів');
+        }
+
+        if(erorResponse == 'Невірно вказаний email або пароль')
+        {
+          console.log('Невірно вказаний email або пароль');
+          alert('Невірно вказаний email або пароль')
         }
 
         console.log(err);
