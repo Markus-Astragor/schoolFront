@@ -8,6 +8,7 @@ function Register() {
   const [emailEror, setEmailEror] = useState(false);
   const [usernameEror, setUsernameEror] = useState(false);
   const [passwordEror, setPasswordEror] = useState(false);
+  const [errorText, setErrorText] = useState('');
 
   const navigateUser = useNavigate();
 
@@ -48,15 +49,45 @@ function Register() {
     }).then(function (response) {
         console.log(response);
         const respPerson = response.data.UserData.person;
+
         
         if(respPerson == 'student')
         {
           navigateUser('/userpage');
         }
 
+        if(respPerson == 'teacher')
+        {
+          navigateUser('/');
+        }
+
 
       }).catch(function (error) {
         console.log(error);
+
+        const errorMessage = error.response.data[0].msg;
+        console.log(errorMessage);
+
+        if(errorMessage == 'Неправильний email')
+        {
+          setEmailEror(true);
+          setErrorText('Некоректний email');
+        }
+
+        if(errorMessage == 'Пароль повинен мінімум 8 символів')
+        {
+          setPasswordEror(true);
+          setErrorText('Пароль повинен мінімум 8 символів')
+        }
+
+        if(errorMessage == "Ім'я повинно містити мінімум 3 символи")
+        {
+          setUsernameEror(true);
+          setErrorText("Ім'я повинно містити мінімум 3 символи");
+        }
+
+
+        
       });
   }
 
@@ -65,27 +96,39 @@ function Register() {
       setEmailEror(false);
       setPasswordEror(false);
       setUsernameEror(false);
+      setErrorText('');
 
       
     if(!email.includes('.', '@'))
     {
-      console.log('inncorect email');
+      console.log('Некоректний email');
       setEmailEror(true)
+      setErrorText('Некоректний email')
+      return 1;
+    }
+
+    if(password.length <8)
+    {
+      setPasswordEror(true);
+      setErrorText('Пароль повинен мінімум 8 символів')
+      console.log('Пароль повинен мінімум 8 символів');
       return 1;
     }
 
     if(!(password == repeatPassword))
     {
-      console.log('password is different ');
+      console.log('Паролі не співпадають');
       setPasswordEror(true);
+      setErrorText('Паролі не співпадають')
       return 1;
     }
 
 
     if(username.length < 3)
     {
-      console.log('username should consisit of 3 letter minimum');
+      console.log("Ім'я повинно містити мінімум 3 символи");
       setUsernameEror(true)
+      setErrorText("Ім'я повинно містити мінімум 3 символи");
       return 1;
     }
 
@@ -109,19 +152,20 @@ function Register() {
 
       <form className='Form_Login'>
         <input className={emailEror ? RegisterStyle.error_border : RegisterStyle.error_border_normal} required type='email' placeholder='Email' ref={emailInputRef}></input>
-        <p className={emailEror ? RegisterStyle.error_block : RegisterStyle.error_block_hidden}>Incorect email</p>
+        <p className={emailEror ? RegisterStyle.error_block : RegisterStyle.error_block_hidden}>{errorText}</p>
 
         <input className={usernameEror ? RegisterStyle.error_border : RegisterStyle.error_border_normal} required type='username' placeholder='Name' ref={UsernameRef}></input>
-        <p className={usernameEror ? RegisterStyle.error_block : RegisterStyle.error_block_hidden}>Incorect name</p>
+        <p className={usernameEror ? RegisterStyle.error_block : RegisterStyle.error_block_hidden}>{errorText}</p>
 
         <input className={passwordEror ? RegisterStyle.error_border : RegisterStyle.error_border_normal} required type='password' placeholder='Password' ref={passwordRef}></input>
-        <p className={passwordEror ? RegisterStyle.error_block : RegisterStyle.error_block_hidden}>Incorect Password</p>
+        <p className={passwordEror ? RegisterStyle.error_block : RegisterStyle.error_block_hidden}>{errorText}</p>
 
         <input className={passwordEror} required type='password' placeholder='Repeat password' ref={repeatPasswordRef}></input>
-        <p className={passwordEror ? RegisterStyle.error_block : RegisterStyle.error_block_hidden}>Incorect Password</p>
+        <p className={passwordEror ? RegisterStyle.error_block : RegisterStyle.error_block_hidden}>{errorText}</p>
 
         <div className='div_submit_btn'>
           <button className='submit_btn' onClick={(e) => { onSubmit(e) }}>Зареєструватися</button>
+          <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div> 
         </div>
 
         
