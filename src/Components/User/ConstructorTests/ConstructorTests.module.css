@@ -1,0 +1,26 @@
+.ConstructorTests{
+    text-align: center;
+}
+
+.blockTests{
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.mainQuestion{
+    padding: 10px;
+}
+
+.addTestsBtn{
+    display: flex;
+    justify-content: center;
+}
+
+.answerVariants, .correctAnswer, .mainQuestion{
+    margin: 10px;
+}

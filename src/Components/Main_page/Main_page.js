@@ -27,6 +27,7 @@ import circle_2 from '../../images/mainPage/normal_circle.png';
 import arrow_down from '../../images/mainPage/scroll.png';
 import Context from '../UseContext/indexContext';
 import { NavLink } from 'react-router-dom';
+import ConstructorTests from '../User/ConstructorTests/ConstructorTests';
 
 
 
@@ -155,7 +156,7 @@ function Main_page() {
 
 
       <AboutUs GetAboutRef = {GetAboutRef} />
-
+      <ConstructorTests/>
     </div>
   )
 }
