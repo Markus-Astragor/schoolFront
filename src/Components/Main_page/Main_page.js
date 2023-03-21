@@ -28,7 +28,10 @@ import arrow_down from '../../images/mainPage/scroll.png';
 import Context from '../UseContext/indexContext';
 import { NavLink } from 'react-router-dom';
 import ConstructorTests from '../User/ConstructorTests/ConstructorTests';
+import Prefutter from '../Prefutter/index.js';
 
+import Statistic_Student from '../Statistics_Student/index.js';
+import Video_block from '../Video_block/index.js';
 
 
 
@@ -157,6 +160,9 @@ function Main_page() {
 
       <AboutUs GetAboutRef = {GetAboutRef} />
       <ConstructorTests/>
+      <Prefutter/>
+      <Statistic_Student/>
+      <Video_block/>
     </div>
   )
 }
