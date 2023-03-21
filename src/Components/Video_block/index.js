@@ -5,7 +5,7 @@ import Slider from "react-slick";
 
 
 
-const firstvideo = 'prvAdHXUvbs&ab_channel=TragicFX';
+
 
 
 
