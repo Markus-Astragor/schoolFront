@@ -2,12 +2,12 @@ import React from "react";
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import history from '../../../images/ChooseTests/history.jpg';
+import history from '../../../images/ChooseTests/history.png';
 import geography from '../../../images/ChooseTests/geography.png';
-import math from '../../../images/ChooseTests/math.jpg';
+import math from '../../../images/ChooseTests/math.png';
 import ukrainian from '../../../images/ChooseTests/ukrainian.png';
-import ukrainian_literature from '../../../images/ChooseTests/ukrainian_literature.jpg';
-import english from '../../../images/ChooseTests/english.jpg';
+import ukrainian_literature from '../../../images/ChooseTests/ukrainian_literature.png';
+import english from '../../../images/ChooseTests/english.png';
 import Test from "./Test";
 
 
@@ -70,7 +70,18 @@ function Test_arr() {
         autoplaySpeed: 5000,
         pauseOnHover: true,
         nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />
+        prevArrow: <SamplePrevArrow />,
+        responsive: [
+            {
+              breakpoint: 1300,
+              settings: {
+                slidesToShow: 2,
+                rows: 2,
+                infinite: true,
+                dots: true
+              }
+            }
+          ]
     }
     return (
         <div className="Test_arr">

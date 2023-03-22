@@ -21,8 +21,8 @@
 
 .blog-image{
     width: 300px;
-    height: 300px;
+    height: 230px;
     background-size: 100%;
-    /* background-position: center; */
+    background-position: center;
     background-repeat: no-repeat;
 }

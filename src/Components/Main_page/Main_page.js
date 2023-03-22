@@ -32,6 +32,7 @@ import Prefutter from '../Prefutter/index.js';
 
 import Statistic_Student from '../Statistics_Student/index.js';
 import Video_block from '../Video_block/index.js';
+import ChooseTests from '../User/ChooseTests/ChooseTests';
 
 
 
@@ -163,6 +164,7 @@ function Main_page() {
       <Prefutter/>
       <Statistic_Student/>
       <Video_block/>
+      <ChooseTests/>
     </div>
   )
 }
