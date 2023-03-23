@@ -1,81 +1,72 @@
 
 
+
+
+
+
 .user_page{
-    color: red;
     width: 100%;
     height: 100vh;
-    background-color: black;
+    background-color: white;
     box-sizing: border-box;
 }
 
-.user_flex{
-    display: flex;
+.overlayer{
+    background-color: rgba(25, 19, 19, 0.588);
     height: 100%;
-    box-sizing: border-box;
-}
-
-.burger_block{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    background-color: wheat;
-    height: 100%;
-    transition: 0.5s ease-in-out;
-    box-sizing: border-box;
-}
-
-.burger_block_close{
-    display: flex;
-    flex-direction: column;
-    background-color: wheat;
-    height: 100%;
-    width: 0;
-    transition: 0.5s ease-in-out;
-    box-sizing: border-box;
-}
-
-.close_burger_btn{
-    align-self: flex-end;
-    position: absolute;
-}
-
-.content_block{
-    width: 80%;
-    background-color: blue;
-    height: 100%;
-    overflow: auto;
-    font-size: 18px;
-    padding: 20px 20px 20px 120px;
-    transition: 0.5s ease-in-out;
-    box-sizing: border-box;
-}
-
-.content_block_wider{
     width: 100%;
-    background-color: blue;
+    position: absolute;
+    z-index: 1;
+    display: block;
+}
+
+.overlayer_hidden{
+    background-color: rgba(25, 19, 19, 0.588);
     height: 100%;
-    overflow: auto;
-    font-size: 18px;
-    padding: 20px 20px 20px 120px;
-    transition: 0.5s ease-in-out;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    display: none;
+
+}
+
+
+
+
+
+
+
+/*Burger Menu styles*/
+
+
+.burger{
+    position: absolute;
+    height: 100vh;   
+    width: 300px;
+    background-color: #1FA67B;
+    transition: 0.4s ease-out;
+    transform: translateX(-300px);
     box-sizing: border-box;
+    z-index: 2;
 }
 
-
-.open_burger{
+.burger_show{
+         
     position: absolute;
-    top: 0;
-    transform: translateX(-100px);
-    transition: 0.7s ease-in-out;
-    opacity: 0;
-}
-
-
-.open_burger_show{
-    position: absolute;
-    top: 0;
+    box-sizing: border-box;
+    height: 100vh;   
+    width: 300px;
+    background-color: #1FA67B;
+    transition: 0.4s ease-in-out;
     transform: translateX(0);
-    transition: 0.7s ease-in-out;
-    opacity: 1;
+    z-index: 2;
+    
+}
+
+.burgerIcon{
+    width: 60px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }
