@@ -37,7 +37,8 @@ function SamplePrevArrow(props) {
 function Video_block(){
   let bloggerList = useRef(null);
   function openList(){
-    bloggerList.current.style.display = 'block';
+    bloggerList.current.style.opacity = '1';
+    bloggerList.current.style.height = '180px';
   }
   
     
