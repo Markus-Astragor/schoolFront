@@ -1,50 +1,50 @@
-.Video_block{
+.Video_block {
     padding-bottom: 40px;
     width: 100%;
     background-color: green;
     background-image: url("");
-  background-position: center; 
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.fourvideo{
+.fourvideo {
     margin-top: 50px;
     width: 100%;
     text-align: center;
 }
 
-.Video_block iframe{
+.Video_block iframe {
     margin-left: 25px;
     margin-right: 25px;
 }
 
-.white_info_bloger_block_outside{
+.white_info_bloger_block_outside {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.white_info_bloger_block{
+.white_info_bloger_block {
     width: 1170px;
     margin-top: 50px;
-    /* height: 500px; */
+    height: auto;
     background-color: white;
     padding-left: 30px;
     padding-top: 30px;
     padding-bottom: 40px;
     padding-right: 90px;
     box-sizing: border-box;
-    
-    
+
+
 }
 
-.white_info_bloger_block p{
+.white_info_bloger_block p {
     margin-top: 40px;
 }
 
 
-.greenButtom_VideoBlock{
+.greenButtom_VideoBlock {
     margin-top: 40px;
     background-color: #194605;
     padding-top: 13px;
@@ -56,9 +56,11 @@
     font-size: 17px;
 }
 
-.list_of_bloger{
+.list_of_bloger {
     margin-left: 5px;
     margin-top: 15px;
-    display: none;
-    transition: 100ms;
+    opacity: 0;
+    overflow: hidden;
+    transition: 2.5s;
+    height: 0px;
 }

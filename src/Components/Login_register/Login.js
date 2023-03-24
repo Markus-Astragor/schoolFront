@@ -7,7 +7,7 @@ import axios from 'axios';
 
 
 
-function Login() {
+function Login(props) {
 
 
   const [emailEror, setEmailEror] = useState(false);
@@ -15,6 +15,7 @@ function Login() {
   const [errorText, setErrorText] = useState('');
 
   const [waitingResp, setWaitingResp] = useState(false);
+
 
   const navigateUser = useNavigate();
 
@@ -61,6 +62,7 @@ function Login() {
 
         setWaitingResp(false);
 
+        
         const errorMessage = err.response.data[0].msg;
         const erorResponse = err.response.data;
         console.log(errorMessage);
@@ -80,7 +82,8 @@ function Login() {
         if(erorResponse == 'Невірно вказаний email або пароль')
         {
           console.log('Невірно вказаний email або пароль');
-          alert('Невірно вказаний email або пароль')
+          props.setInvalidUser(true);
+          console.log('InvalidUserstate is set');
         }
 
         console.log(err);

@@ -52,6 +52,10 @@ function Register() {
         setWaitingResp(false);
 
         console.log(response);
+        const token = response.data.token;
+        localStorage.setItem('token', JSON.stringify(token));
+        
+
         const respPerson = response.data.UserData.person;
 
         
@@ -72,7 +76,6 @@ function Register() {
         console.log(error);
 
         const errorMessage = error.response.data[0].msg;
-        console.log(errorMessage);
 
         if(errorMessage == 'Неправильний email')
         {
@@ -171,6 +174,7 @@ function Register() {
 
         <div className={RegisterStyle.div_submit_btn}>
           <button className={waitingResp ? RegisterStyle.submit_btn_hidden : RegisterStyle.submit_btn } onClick={(e) => { onSubmit(e) }}>Зареєструватися</button>
+
           <div class={ waitingResp ? RegisterStyle.lds_ellipsis : RegisterStyle.style={display: 'none'}}><div></div><div></div><div></div><div></div></div> 
         </div>
 
