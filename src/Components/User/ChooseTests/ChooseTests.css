@@ -1,17 +1,23 @@
-.ChooseTests{
+.Test {
+    overflow: hidden;
+    width: 300px;
+    height: 260px;
+}
+
+.ChooseTests {
     background-color: var(--background);
     text-align: center;
     height: 100vh;
     width: 100%;
 }
 
-.ChooseTests_header > h2{
-    color:white;
+.ChooseTests_header>h2 {
+    color: white;
     font-size: 40px;
     letter-spacing: 0.25rem;
 }
 
-.Test_arr{
+.Test_arr {
     width: 50%;
     margin-top: 50px;
     margin-bottom: 0;
@@ -19,10 +25,39 @@
     margin-right: auto;
 }
 
-.blog-image{
-    width: 300px;
-    height: 230px;
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+.blog-image {
+    width: 100%;
+    height: 200px;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.Subject_block {
+    color: black;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Subject_block>span {
+    width: 100%;
+    transition: 0.5s;
+}
+
+.Subject_block>span:hover {
+    cursor: pointer;
+    color: green;
+}
+
+.Subject_image {
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+.Subject_image:hover {
+    transform: scale(1.1);
 }
