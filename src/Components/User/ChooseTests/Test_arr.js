@@ -12,24 +12,18 @@ import Test from "./Test";
 
 
 let subjects = [
-    { image: history },
-    { image: geography },
-    { image: math },
-    { image: ukrainian },
-    {image: ukrainian_literature},
-    {image: english},
-    { image: history },
-    { image: geography },
-    { image: math },
-    { image: ukrainian },
-    {image: ukrainian_literature},
-    {image: english}
-
+    { image: history, subjectName: 'Історія' },
+    { image: geography, subjectName: 'Географія' },
+    { image: math, subjectName: 'Математика' },
+    { image: ukrainian, subjectName: 'Українська мова' },
+    { image: ukrainian_literature, subjectName: 'Українська література' },
+    { image: english, subjectName: 'Англійська' },
 ]
 
 let subjectsArray = subjects.map(
-    subjectImage => <Test
-        image={subjectImage.image}
+    subject => <Test
+        image={subject.image}
+        subjectName={subject.subjectName}
     />
 )
 
@@ -39,7 +33,7 @@ function SampleNextArrow(props) {
     return (
         <div
             className={className}
-            style={{ ...style, display: "none"}}
+            style={{ ...style, display: "none" }}
             onClick={onClick}
         />
     );
@@ -48,22 +42,21 @@ function SampleNextArrow(props) {
 function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
-      <div
-        className={className}
-        style={{ ...style, display: "none" }}
-        onClick={onClick}
-      />
+        <div
+            className={className}
+            style={{ ...style, display: "none" }}
+            onClick={onClick}
+        />
     );
-  }
+}
 
 
 function Test_arr() {
     const settings = {
         className: "center",
-        infinite: true,
-        centerPadding: "180px",
+        infinite: false,
         slidesToShow: 3,
-        speed: 500,
+        speed: 1500,
         rows: 2,
         slidesPerRow: 1,
         autoplay: true,
@@ -73,15 +66,35 @@ function Test_arr() {
         prevArrow: <SamplePrevArrow />,
         responsive: [
             {
-              breakpoint: 1300,
-              settings: {
-                slidesToShow: 2,
-                rows: 2,
-                infinite: true,
-                dots: true
-              }
-            }
-          ]
+                breakpoint: 1300,
+                settings: {
+                    slidesToShow: 2,
+                    rows: 2,
+                    infinite: false,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    rows: 2,
+                    infinite: false,
+                    dots: false
+                }
+            },
+
+            {
+                breakpoint: 400,
+                settings: {
+                    slidesToShow: 1,
+                    rows: 1,
+                    infinite: false,
+                    dots: false
+                }
+            },
+
+        ]
     }
     return (
         <div className="Test_arr">

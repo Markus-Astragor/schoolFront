@@ -3,7 +3,12 @@ import React from "react";
 function Test(props){
     return(
         <div className="Test">
-            <div className="blog-image" style={{backgroundImage: `url(${props.image})`}}></div> 
+            <div className="blog-image">
+            <img src={props.image} className="Subject_image"/>
+            </div>
+            <div className="Subject_block">
+                <span>{props.subjectName}</span>
+            </div> 
         </div>
     )
 }
