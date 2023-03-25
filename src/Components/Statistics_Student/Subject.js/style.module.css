@@ -1,0 +1,11 @@
+
+
+.subject_button{
+    background-color: rgb(233, 224, 99);
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: 0 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}

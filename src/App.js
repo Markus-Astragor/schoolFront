@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Context from './Components/UseContext/indexContext';
 import ChooseTests from './Components/User/ChooseTests/ChooseTests';
 import UserPage from './Components/User';
+import DeniedAccess from './Components/DeniedAccess';
 function App() {
 
 
@@ -19,6 +20,7 @@ function App() {
             <Route element={<Login_and_register/>} path='/authoriztion'/>
             <Route element={<Main_page/>} path='/'/>
             <Route element={<UserPage/>} path='/userpage'/>
+            <Route element={<DeniedAccess/>} path='/deniedacess' />
           </Routes>
 
         </div>

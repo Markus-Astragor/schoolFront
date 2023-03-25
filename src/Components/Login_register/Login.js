@@ -42,10 +42,13 @@ function Login(props) {
         email: email,
         password: password
       }).then((response) =>{
+
         console.log(response);
 
-        const respPerson = response.data.person;
-        console.log(respPerson);
+        const respPerson = response.data.userDate.person;
+        const token = response.data.token;
+        
+        localStorage.setItem('token', JSON.stringify(token));
 
         
         if(respPerson == 'student')

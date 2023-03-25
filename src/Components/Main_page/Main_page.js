@@ -160,11 +160,8 @@ function Main_page() {
 
 
       <AboutUs GetAboutRef = {GetAboutRef} />
-      <ConstructorTests/>
       <Prefutter/>
-      <Statistic_Student/>
       <Video_block/>
-      <ChooseTests/>
     </div>
   )
 }

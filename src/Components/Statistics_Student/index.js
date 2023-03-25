@@ -1,5 +1,7 @@
 import "./style.css";
 import React from "react";
+import Subject from "./Subject.js";
+
 import {
   LineChart,
   Line,
@@ -56,87 +58,54 @@ const data = [
   }
 ];
 
+const subjects = ['Математика', 'Англійська мова', 'Історія України', 'Українська література', 'Зарубіжна література', 'Ще щось','Англійська мова', 'Історія України', 'Українська література', ];
+
 export default function Statistic_Student() {
   return (
     <div className="Stats_block">
       <div className="title_Stats_block">
         <h1>Моя успішність</h1>
       </div>
-    <div className="Stats_block_flexforcenter">
-    <div className="gorison_scroll_grafic">
-    <LineChart
-      width={1200}
-      height={600}
-      data={data}
-      margin={{
-        top: -10,
-        right: 50,
-        left: 20,
-        bottom: -30      }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      <Line
-        type="monotone"
-        dataKey="матем"
-        stroke="#8884d8"
-        activeDot={{ r: 8 }}
-      />
-      <Line
-        type="monotone"
-        dataKey="англ"
-        stroke="#8885d8"
-      />
-      <Line 
-      type="monotone" 
-      dataKey="укрмова" 
-      stroke="#82ca9d" />
-    </LineChart>
-    </div>
-    </div>
-    <div className="buttom_of_subject">
-        <div className="Yellow_butt_of_subject">
-          <p>Математика</p>
+
+
+      <div className="Stats_block_flexforcenter">
+        <div className="gorison_scroll_grafic">
+          <LineChart
+            width={850}
+            height={300}
+            data={data}
+            margin={{
+              top: -10,
+              right: 30,
+              left: 0,
+              bottom: -10
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line
+              type="monotone"
+              dataKey="матем"
+              stroke="#8884d8"
+              activeDot={{ r: 5 }}
+            />
+          </LineChart>
+
         </div>
-        <div className="Yellow_butt_of_subject">
-          <p>Математика</p>
-        </div>
-        <div className="Yellow_butt_of_subject">
-          <p>Математика</p>
-        </div>
-        <div className="Yellow_butt_of_subject">
-          <p>Математика</p>
-        </div>
-        <div className="Yellow_butt_of_subject">
-          <p>Математика</p>
-        </div>
-        <div className="Yellow_butt_of_subject">
-          <p>Математика</p>
-        </div>
-    </div>
-    <div className="buttom_of_subject">
-        <div className="Yellow_butt_of_subject">
-          <p>Математика</p>
-        </div>
-        <div className="Yellow_butt_of_subject">
-          <p>Математика</p>
-        </div>
-        <div className="Yellow_butt_of_subject">
-          <p>Математика</p>
-        </div>
-        <div className="Yellow_butt_of_subject">
-          <p>Математика</p>
-        </div>
-        <div className="Yellow_butt_of_subject">
-          <p>Математика</p>
-        </div>
-        <div className="Yellow_butt_of_subject">
-          <p>Математика</p>
-        </div>
-    </div>
+      </div>
+
+      
+      <div className="buttom_of_subject">
+        {subjects.map(subject =>{
+          return(
+            <Subject subjectName ={subject}/>
+          )
+        })}
+      </div>
+
     </div>
   );
 }

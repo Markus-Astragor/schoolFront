@@ -50,8 +50,7 @@ function Register() {
 
     }).then(function (response) {
         setWaitingResp(false);
-
-        console.log(response);
+        
         const token = response.data.token;
         localStorage.setItem('token', JSON.stringify(token));
         
@@ -76,6 +75,13 @@ function Register() {
         console.log(error);
 
         const errorMessage = error.response.data[0].msg;
+        const theSameEmail = error.response.data;
+
+        if(theSameEmail == 'Даний email вже використовується')
+        {
+          setEmailEror(true);
+          setErrorText('Даний email вже використовується');
+        }
 
         if(errorMessage == 'Неправильний email')
         {
