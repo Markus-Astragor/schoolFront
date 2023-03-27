@@ -1,7 +1,9 @@
 .ConstructorTests {
     text-align: center;
     background-image: url('../../../images/ConstructorTests_images/background.png');
-    padding: 20px 0px 20px 0px;
+    padding: 50px 0px 50px 0px;
+    min-height: 100vh;
+
 }
 
 .ConstructorTests>h2 {
