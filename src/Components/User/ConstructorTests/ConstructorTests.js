@@ -16,8 +16,14 @@ function ConstructorTests() {
         const testComponent =(<div className={ConstructStyles.blockTests}>
             <h3>Питання{countQuestions++}</h3>
             <input placeholder='Питання' className={ConstructStyles.mainQuestion}/>
+            <div className={ConstructStyles.AnswerVariants_and_checkbox}>
+            <input type='checkbox' className={ConstructStyles.checkbox} style={{backgroundColor: 'green'}}/>
             <input placeholder='Варіанти відповіді' className={ConstructStyles.answerVariants}/>
+            </div>
+            <div className={ConstructStyles.AnswerVariants_and_checkbox}>
+            <input type='checkbox' className={ConstructStyles.checkbox} style={{backgroundColor: 'green'}}/>
             <input placeholder='Правильна відповідь'className={ConstructStyles.correctAnswer}/>
+            </div>
         </div>);
         setCreateTests([...createTests, testComponent]);
 
