@@ -8,6 +8,7 @@ function ConstructorTests() {
 
     const [numberBlocks, setNumberBlocks] = useState([1]);
 
+
    
 
     const addTestBlock = () =>{
@@ -20,8 +21,8 @@ function ConstructorTests() {
             <h2>Констуктор тестів</h2>
             <div>
 
-                {numberBlocks.map(block => {
-                    return(<TestBlock/>)
+                {numberBlocks.map((el, index) => {
+                    return(<TestBlock index = {index}/>)
                 })}
 
                 <div className={ConstructStyles.addTestsBtn}>

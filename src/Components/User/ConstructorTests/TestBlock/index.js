@@ -4,7 +4,7 @@ import styles from './style.module.css';
 import plusImg from '../../../../images/ConstructorTests_images/plus_img.png';
 import AnswerInput from "../AnswerInput";
 
-function TestBlock()
+function TestBlock(props)
 {
 
 
@@ -12,23 +12,20 @@ function TestBlock()
     const [numberOfAnswers, setNumberOfAnswers] = useState([1,1]);
 
 
-    function addAnswer()
+    function addAnswer(ref)
     {
-        
         setNumberOfAnswers(prev=>([...prev,1]));
+        
     }
-
-
-
 
     return(
         <div className={styles.blockTests}>
-                <h3>Питання</h3>
+                <h3>Питання{props.index+1}</h3>
                  
                 <input placeholder='Питання' className={styles.mainQuestion} />
 
-                {numberOfAnswers.map(el =>{
-                    return(<AnswerInput/>)
+                {numberOfAnswers.map(() =>{
+                    return(<AnswerInput />)
                 })}
                 
 
