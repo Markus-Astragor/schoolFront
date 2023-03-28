@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from './style.module.css';
 import plusImg from '../../../../images/ConstructorTests_images/plus_img.png';
 import AnswerInput from "../AnswerInput";
@@ -10,13 +10,18 @@ function TestBlock(props)
 
     
     const [numberOfAnswers, setNumberOfAnswers] = useState([1,1]);
+    const [Getref, SetGetRef]= useState();
 
-
-    function addAnswer(ref)
+    function addAnswer()
     {
         setNumberOfAnswers(prev=>([...prev,1]));
-        
     }
+
+    // const ShowInput = (ref)=> {   
+    //     SetGetRef(ref);
+    //     console.log(ref.current.value);
+    //   }
+
 
     return(
         <div className={styles.blockTests}>
@@ -32,6 +37,7 @@ function TestBlock(props)
                 <div className={styles.plusImg}>
                     <img src={plusImg} width='40px' height='40px' onClick={addAnswer} />
                 </div>
+                <button> Show</button>
             </div>
     );
 }

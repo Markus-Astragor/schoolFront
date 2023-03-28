@@ -8,8 +8,8 @@ import styles from './style.module.css';
 function AnswerInput(props) {
 
 
-    const answerRef = useRef(null);
-    
+    const answerRef = useRef();
+    // props.ShowInput(answerRef);
 
     return (
         <div  className={styles.AnswerVariants_and_checkbox}>
