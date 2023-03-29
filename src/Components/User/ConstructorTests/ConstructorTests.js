@@ -2,27 +2,38 @@ import React, { useEffect, useRef, useState } from 'react';
 import ConstructStyles from './ConstructorTests.module.css';
 import TestBlock from './TestBlock';
 
+import {v4 as uuidv4} from "uuid";
+
 function ConstructorTests() {
 
     const errorParagraph = useRef(null);
 
-    const [numberBlocks, setNumberBlocks] = useState([1]);
+    const [numberBlocks, setNumberBlocks] = useState([]);
 
 
    
 
     const addTestBlock = () =>{
-        setNumberBlocks(prev => ([...prev, 1]));
+        const blockId = uuidv4();
+        setNumberBlocks(prev => ([...prev, blockId]));
     }
 
+
+    useEffect(()=>{
+        const id = uuidv4();
+        setNumberBlocks(prev=> ([...prev, id]));
+    },[])
+
+    
    
     return (
         <div className={ConstructStyles.ConstructorTests}>
             <h2>Констуктор тестів</h2>
             <div>
 
-                {numberBlocks.map((el, index) => {
-                    return(<TestBlock index = {index}/>)
+                {numberBlocks.map((id, index) => {
+
+                    return(<TestBlock index = {index} key={id}/>)
                 })}
 
                 <div className={ConstructStyles.addTestsBtn}>
