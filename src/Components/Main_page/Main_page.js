@@ -146,7 +146,7 @@ function Main_page() {
 
           <div className={pageInfo ?  'main-page-subtitle-block show-subtitle-block' : 'main-page-subtitle-block'}>
               <div className='main-page-subtitle'>Your Online Teacher</div>
-              <NavLink to='/authoriztion'  className='main-page-button' >Sign up or Login</NavLink>
+              <NavLink to='/authoriztion'  className='main-page-button' target="_blank">Sign up or Login</NavLink>
           </div>
           
 
