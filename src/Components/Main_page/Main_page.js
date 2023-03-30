@@ -162,6 +162,7 @@ function Main_page() {
       <AboutUs GetAboutRef = {GetAboutRef} />
       <Prefutter/>
       {/* <Video_block/> */}
+      <ChooseTests />
       <ConstructorTests/>
     </div>
   )

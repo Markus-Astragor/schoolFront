@@ -1,6 +1,6 @@
 .Test {
     overflow: hidden;
-    width: 300px;
+    max-width: 300px;
     height: 260px;
 }
 
