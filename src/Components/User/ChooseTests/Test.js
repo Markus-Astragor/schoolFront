@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function Test(props){
     return(
@@ -7,7 +8,7 @@ function Test(props){
             <img src={props.image} className="Subject_image"/>
             </div>
             <div className="Subject_block">
-                <span>{props.subjectName}</span>
+                <NavLink to={'/userpage/test'+props.link}><span>{props.subjectName}</span></NavLink>
             </div> 
         </div>
     )

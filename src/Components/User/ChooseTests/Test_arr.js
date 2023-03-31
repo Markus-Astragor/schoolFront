@@ -12,18 +12,19 @@ import Test from "./Test";
 
 
 let subjects = [
-    { image: history, subjectName: 'Історія' },
-    { image: geography, subjectName: 'Географія' },
-    { image: math, subjectName: 'Математика' },
-    { image: ukrainian, subjectName: 'Українська мова' },
-    { image: ukrainian_literature, subjectName: 'Українська література' },
-    { image: english, subjectName: 'Англійська' },
+    { image: history, subjectName: 'Історія', link: '/history' },
+    { image: geography, subjectName: 'Географія', link: '/geography' },
+    { image: math, subjectName: 'Математика', link: '/math' },
+    { image: ukrainian, subjectName: 'Українська мова', link: '/ukrainian' },
+    { image: ukrainian_literature, subjectName: 'Українська література', link: '/ukrainian_literature' },
+    { image: english, subjectName: 'Англійська', link: '/english' },
 ]
 
 let subjectsArray = subjects.map(
     subject => <Test
         image={subject.image}
         subjectName={subject.subjectName}
+        link={subject.link}
     />
 )
 
