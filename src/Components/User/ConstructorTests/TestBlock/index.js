@@ -5,50 +5,99 @@ import plusImg from '../../../../images/ConstructorTests_images/plus_img.png';
 import AnswerInput from "../AnswerInput";
 import {v4 as uuidv4} from "uuid";
 
-function TestBlock(props)
+function TestBlock({GetValueMainState, index, setgetValueMain,SaveToTestInfo})
 {
 
 
-    
-    const [numberOfAnswers, setNumberOfAnswers] = useState([]);
+    const [answerLimit, setAnswerLimit] = useState(false);
+    const [numberOfAnswers, setNumberOfAnswers] = useState([]);     // Масив для зберігання індексів полів для відповідей
+    const [answers, setAnswers] = useState([]);         // Масив для зберігання інформації по питанню (Питання, відповідь, правильна відповідь)
+    const [questionInput, setQuestionInput] = useState(''); // State для зберігання питання
+    const [Show, SetShow] = useState(false); // State для trigger   
 
-    function addAnswer()
+
+
+  
+    function getQuestionValue(e)            // Функція для витягування питання 
     {
-        const answerId = uuidv4();
-        setNumberOfAnswers(prev=>([...prev, answerId]));
-
+        setQuestionInput(e.target.value);
+        console.log(e.target.value);
     }
 
+    function addAnswer()        //Функція яка буде додавати AnswerInput при натиснені на +
+    {
+        if(numberOfAnswers.length >= 5)
+        {
+            setAnswerLimit(true);
+            return;
+        }
+        const answerId = uuidv4();
+        setNumberOfAnswers(prev=>([...prev, answerId]));
+    }
 
-    useEffect(()=>{
+    function removeAnswerInput(id)      //  Функція яка буде видаляти AnswerInput при натисканні на remove button or icon
+    {
+        setNumberOfAnswers(numberOfAnswers.filter(arrayId =>{return arrayId != id}));
+    }
+
+    function GetValue(inputValue, checkboxValue)           //Функція яка витягує значення з answer input
+    {
+        const object = {};
+        object.question = questionInput;
+        object.answer = inputValue;
+        object.rightAnswer = checkboxValue;
+        
+
+        console.log(object);
+        setAnswers(prev => ([...prev, object]));
+        // запушити значення в масив   done +
+        // і підняти на рівень вище    done +
+    }
+
+    function SetStateForShow()      // Функція яка встановлює SetShow true - для того щоб спрацював трігер в AnswerInput Useeffect
+    {
+        SetShow(true);
+        setgetValueMainFalse();
+    }
+
+    function setgetValueMainFalse(){            //Функція яка встановлює статус кнопки на false щоб можна було знову її натиснути і отрмати дані
+        setgetValueMain(false);
+    }
+
+    useEffect(()=>{             //перевірка отриманих answers (Масив з обєктами) для перевірки 
+        console.log(answers);
+    },[answers])
+
+    useEffect(()=>{             //перевірка отриманих answers (Масив з обєктами)
+        if(answers.length >=1)
+        {
+            SaveToTestInfo(answers);
+        }
+       
+    },[answers])
+
+    useEffect(()=>{             // UseEffect який перевіряє чи кнопка зберегти тест була натиснута якщо так то викликається функція SetStateForShow
+        if(GetValueMainState)
+        {
+            SetStateForShow();
+            
+        }
+    },[GetValueMainState])
+
+    useEffect(()=>{     //UseEffect який при першому рендері сторінки створює два інпути для answer по замовчуванню
         const answerId = uuidv4();
         setNumberOfAnswers(prev=>[...prev, answerId]);
         const answerId2 = uuidv4();
         setNumberOfAnswers(prev=>[...prev, answerId2]);
     },[])
 
-    useEffect(()=>{
+    useEffect(()=>{         //UseEffect який при додавані answerInput в масив буде виводити масив з id (Суто для перевірки)
         console.log('numberofAnswers',numberOfAnswers);
     },[numberOfAnswers])
 
 
-
-    function removeAnswerInput(id)
-    {
-        console.log(id);
-        setNumberOfAnswers(numberOfAnswers.filter(arrayId =>{return arrayId != id}));
-    }
-
-
-    const [Show, SetShow] = useState(false); // State для trigger 
-
-    function GetValue(inputValue)
-    {
-        SetShow(true);
-        console.log(inputValue);
-        // запушити значення в масив 
-        
-    }
+    
+    
 
 
 
@@ -56,19 +105,19 @@ function TestBlock(props)
 
     return(
         <div className={styles.blockTests}>
-                <h3>Питання{props.index+1}</h3>
+                <h3>Питання №{index+1}</h3>
                  
-                <input placeholder='Питання' className={styles.mainQuestion} />
+                <input onChange={(e)=>{getQuestionValue(e)}} placeholder='Питання' className={styles.mainQuestion} />
 
-                {numberOfAnswers.map((id) =>{
-                    return(<AnswerInput answerblockId={id} key={id} removeAnswerInput={removeAnswerInput} Show={Show} GetValue={GetValue} SetShow={SetShow}/>)
+                {numberOfAnswers.map((id, index) =>{
+                    return(<AnswerInput index ={index+1} answerblockId={id} key={id} removeAnswerInput={removeAnswerInput} Show={Show} GetValue={GetValue} SetShow={SetShow}/>)
                 })}
                 
 
                 <div className={styles.plusImg}>
                     <img src={plusImg} width='40px' height='40px' onClick={addAnswer} />
                 </div>
-                <button onClick={GetValue}> Show</button>
+                {answerLimit ? <div style={{color: 'red'}}>Too many answer input</div> : <div></div>}
             </div>
     );
 }
