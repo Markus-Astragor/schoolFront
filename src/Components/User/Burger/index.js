@@ -5,32 +5,32 @@ import styles from './style.module.css';
 
 import closeIcon from '../../../images/BurgerMenu/closeBtn.png';
 import bookIcon from '../../../images/BurgerMenu/book.png';
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
 function Burger(props) {
 
 
-    function OpenSuceess()
-    {
+    // function OpenSuceess()
+    // {
 
-        props.burgerItems.setTests(false);
-        props.burgerItems.setSuccess(true);
-        props.burgerItems.sethistoryOfTest(false);
-        props.burgerItems.setSource(false);
-        props.setIsOpen(false);
+    //     props.burgerItems.setTests(false);
+    //     props.burgerItems.setSuccess(true);
+    //     props.burgerItems.sethistoryOfTest(false);
+    //     props.burgerItems.setSource(false);
+    //     props.setIsOpen(false);
 
        
-    }
+    // }
 
-    function OpenTests()
-    {
-        props.burgerItems.setTests(true);
-        props.burgerItems.setSuccess(false);
-        props.burgerItems.sethistoryOfTest(false);
-        props.burgerItems.setSource(false);
-        props.setIsOpen(false);
-    }
+    // function OpenTests()
+    // {
+    //     props.burgerItems.setTests(true);
+    //     props.burgerItems.setSuccess(false);
+    //     props.burgerItems.sethistoryOfTest(false);
+    //     props.burgerItems.setSource(false);
+    //     props.setIsOpen(false);
+    // }
 
     
 
@@ -50,8 +50,8 @@ function Burger(props) {
             </div>
 
             <div className={styles.burger_options}>
-                <div onClick={OpenTests} className={styles.options_item}>Тести</div>
-                <div onClick={OpenSuceess} className={styles.options_item}>Успішність</div>
+            <NavLink to='/userpage/test'><div className={styles.options_item}>Тести</div></NavLink>
+                <div className={styles.options_item}>Успішність</div>
                 <div className={styles.options_item}>Історія тестів</div>
                 <div className={styles.options_item}>Матеріали</div>
                 <div onClick={Exit} className={styles.options_item}>Вийти</div>

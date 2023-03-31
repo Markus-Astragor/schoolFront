@@ -7,6 +7,7 @@ import Context from './Components/UseContext/indexContext';
 import ChooseTests from './Components/User/ChooseTests/ChooseTests';
 import UserPage from './Components/User';
 import DeniedAccess from './Components/DeniedAccess';
+
 function App() {
 
 
@@ -21,6 +22,10 @@ function App() {
             <Route element={<Main_page/>} path='/'/>
             <Route element={<UserPage/>} path='/userpage'/>
             <Route element={<DeniedAccess/>} path='/deniedacess' />
+            {/* <Route element={<UserPage/>} path="/userpage/*"> */}
+            {/* <Route path="/userpage" element={<UserPage/>}> */}
+              <Route element={<ChooseTests/>} path='/userpage/test'></Route>
+            {/* </Route> */}
           </Routes>
 
         </div>

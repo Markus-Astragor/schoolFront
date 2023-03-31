@@ -2,13 +2,14 @@
 
 
 import React, { useEffect, useState } from "react";
+import { Route } from "react-router-dom";
 
 import styles from './style.module.css';
 import Burger from "./Burger";
 import Statistic_Student from '../Statistics_Student/index.js';
 import ChooseTests from '../User/ChooseTests/ChooseTests.js';
 
-import { useNavigate } from "react-router-dom";
+import { Routes, useNavigate } from "react-router-dom";
 
 import burgerIcon from '../../images/BurgerMenu/burger.png';
 import axios from "axios";
@@ -54,18 +55,18 @@ function UserPage() {
         })
     }
 
-    useEffect(()=>{
-        const userToken = localStorage.getItem('token');
-        const token = JSON.parse(userToken);
-        if(!token)
-        {
-            navigate('/deniedacess');
-            return;
-        }
+    // useEffect(()=>{
+    //     const userToken = localStorage.getItem('token');
+    //     const token = JSON.parse(userToken);
+    //     if(!token)
+    //     {
+    //         navigate('/deniedacess');
+    //         return;
+    //     }
 
-        GetUserInfo(token);
+    //     GetUserInfo(token);
        
-    },[])
+    // },[])
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -86,9 +87,17 @@ function UserPage() {
             </div> 
 
             <div>
+                {/* <Routes>
+                <Route element={<ChooseTests />} path="/userpage/test"/>
+                </Routes> */}
+
+                
+            </div>
+
+            {/* <div>
                {sucess ? <Statistic_Student/> : <div></div>} 
                {tests ? <ChooseTests/>: <div></div>}
-            </div>
+            </div> */}
                 
             
 
