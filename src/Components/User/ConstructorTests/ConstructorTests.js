@@ -14,15 +14,46 @@ function ConstructorTests() {
 
     const [testInfo, setTestInfo] = useState([]); // Інфа про тест
 
+    const [testInfoFilter, setTestInfoFilter] =  useState([]); // State для підготовленої інормації для запиту
 
     function SaveToTestInfo(quesionBlckInfo)        // Функція яка буде витягати дані про питання та відповіді і пушити в головний масив 
     {
         setTestInfo(prev =>([...prev, quesionBlckInfo]));
     }
 
-    useEffect(()=>{             // UseEffect для перевірки чи все працює // один пустий масив на початку тому що там є UseEffect який пушить його при рендері
-        console.log(testInfo);
+
+    useEffect(()=>{                 //Use Effect який буде при появі інформації пушити її в масив в коректному форматі
+
+        testInfo.forEach(qwblock =>{
+            const answers = [];
+            const rightAnswers=[];
+            let question = '';
+
+            qwblock.forEach(obj =>{
+                 question = obj.question;
+                answers.push(obj.answer);
+                if(obj.rightAnswer == true)
+                {
+                    rightAnswers.push(obj.answer);
+                }
+            })
+
+            const questionObj = {};
+            questionObj.answers = answers;
+            questionObj.rightAnswers = rightAnswers;
+            questionObj.question = question;
+            setTestInfoFilter(prev => ([...prev, questionObj]));
+
+            
+        })
     },[testInfo])
+
+    useEffect(()=>{             //Use Effect для перевірки отрмання даних на верхній рівень
+        console.log('testInfoFilter');
+        console.log(testInfoFilter);
+    },[testInfoFilter])
+
+    
    
 
     const addTestBlock = () =>{             //Функція додавання блок для питання

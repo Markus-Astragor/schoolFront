@@ -1,0 +1,73 @@
+
+
+
+
+
+
+.teacher_page{
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.overlayer{
+    background-color: rgba(25, 19, 19, 0.588);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    display: block;
+}
+
+.overlayer_hidden{
+    background-color: rgba(25, 19, 19, 0.588);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    display: none;
+
+}
+
+
+
+
+
+
+
+/*Burger Menu styles*/
+
+
+.burger{
+    position: absolute;
+    height: 100vh;   
+    width: 300px;
+    background-color: #1FA67B;
+    transition: 0.4s ease-out;
+    transform: translateX(-300px);
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.burger_show{
+         
+    position: absolute;
+    box-sizing: border-box;
+    height: 100vh;   
+    width: 300px;
+    background-color: #1FA67B;
+    transition: 0.4s ease-in-out;
+    transform: translateX(0);
+    z-index: 2;
+    
+}
+
+.burgerIcon{
+    width: 60px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}

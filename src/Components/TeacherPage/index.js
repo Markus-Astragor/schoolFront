@@ -1,27 +1,22 @@
 
 
-
-import React, { useEffect, useState } from "react";
+import React, {useState, useEffect} from "react";
 import { Route } from "react-router-dom";
 
 import styles from './style.module.css';
-import Burger from "./Burger";
-import Statistic_Student from '../Statistics_Student/index.js';
-import ChooseTests from '../User/ChooseTests/ChooseTests.js';
-
+import ConstructorTests from "../User/ConstructorTests/ConstructorTests";
 import { Routes, useNavigate } from "react-router-dom";
-
+import Burger from "./Burger";
 import burgerIcon from '../../images/BurgerMenu/burger.png';
 import axios from "axios";
 
-
-function UserPage() {
-
+function TeacherPage()
+{
 
     const navigate = useNavigate();
 
 
-    const [userName, setUserName] = useState('Ostap Sidoryak');
+    const [userName, setUserName] = useState('Teacher Name');
 
     function GetUserInfo(userToken)
     {
@@ -43,8 +38,8 @@ function UserPage() {
     }
 
     // useEffect(()=>{
-    //     const userToken = localStorage.getItem('token');
-    //     const token = JSON.parse(userToken);
+    //     const teacherToken = localStorage.getItem('token');
+    //     const token = JSON.parse(teacherToken);
     //     if(!token)
     //     {
     //         navigate('/deniedacess');
@@ -58,10 +53,8 @@ function UserPage() {
     const [isOpen, setIsOpen] = useState(false); // State для бургера
 
 
-
-    return (
-
-        <div className={styles.user_page}>
+    return(
+        <div className={styles.teacher_page}>
 
             <div onClick={()=>{setIsOpen(false)}} className={isOpen ? styles.overlayer : styles.overlayer_hidden}>
             </div>
@@ -76,10 +69,7 @@ function UserPage() {
             <div>
 
                <Routes>
-                    <Route path="success" element={<Statistic_Student/> }/>
-                    <Route path="tests" element={<ChooseTests/> }/>
-                    <Route path="history_test" element={<Statistic_Student/> }/>
-                    <Route path="materials" element={<Statistic_Student/> }/>
+                    <Route path="create-test" element={<ConstructorTests/> }/>
 
                </Routes>
 
@@ -95,4 +85,5 @@ function UserPage() {
 }
 
 
-export default UserPage;
+export default TeacherPage;
+

@@ -3,10 +3,9 @@ import './App.css';
 import Login_and_register from './Components/Login_register/Login_and_register';
 import Main_page from './Components/Main_page/Main_page';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Context from './Components/UseContext/indexContext';
-import ChooseTests from './Components/User/ChooseTests/ChooseTests';
 import UserPage from './Components/User';
 import DeniedAccess from './Components/DeniedAccess';
+import TeacherPage from './Components/TeacherPage';
 
 function App() {
 
@@ -23,6 +22,7 @@ function App() {
             <Route element={<Main_page/>} path='/'/>
             <Route element={<DeniedAccess/>} path='/deniedacess' />
             <Route element={<UserPage/>} path='/userpage/*'/>
+            <Route  element={<TeacherPage/>} path='/teacherpage/*'></Route>
 
           </Routes>
 

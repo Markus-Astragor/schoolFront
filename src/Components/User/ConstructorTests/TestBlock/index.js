@@ -21,7 +21,6 @@ function TestBlock({GetValueMainState, index, setgetValueMain,SaveToTestInfo})
     function getQuestionValue(e)            // Функція для витягування питання 
     {
         setQuestionInput(e.target.value);
-        console.log(e.target.value);
     }
 
     function addAnswer()        //Функція яка буде додавати AnswerInput при натиснені на +
@@ -48,10 +47,7 @@ function TestBlock({GetValueMainState, index, setgetValueMain,SaveToTestInfo})
         object.rightAnswer = checkboxValue;
         
 
-        console.log(object);
         setAnswers(prev => ([...prev, object]));
-        // запушити значення в масив   done +
-        // і підняти на рівень вище    done +
     }
 
     function SetStateForShow()      // Функція яка встановлює SetShow true - для того щоб спрацював трігер в AnswerInput Useeffect
@@ -64,9 +60,6 @@ function TestBlock({GetValueMainState, index, setgetValueMain,SaveToTestInfo})
         setgetValueMain(false);
     }
 
-    useEffect(()=>{             //перевірка отриманих answers (Масив з обєктами) для перевірки 
-        console.log(answers);
-    },[answers])
 
     useEffect(()=>{             //перевірка отриманих answers (Масив з обєктами)
         if(answers.length >=1)
