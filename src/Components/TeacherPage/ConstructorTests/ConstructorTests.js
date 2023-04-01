@@ -3,6 +3,7 @@ import ConstructStyles from './ConstructorTests.module.css';
 import TestBlock from './TestBlock';
 
 import {v4 as uuidv4} from "uuid";
+import axios from 'axios';
 
 function ConstructorTests() {
 
@@ -51,8 +52,29 @@ function ConstructorTests() {
     useEffect(()=>{             //Use Effect для перевірки отрмання даних на верхній рівень
         console.log('testInfoFilter');
         console.log(testInfoFilter);
+        if(!testInfoFilter.length == 0 )
+        {
+            saveTest(testInfoFilter);
+        }
+       
+        
     },[testInfoFilter])
 
+
+    function saveTest(testInfoFilter) // Функція збереження тесту в MongoDB
+    {
+        axios.post('http://localhost:8080/create-test', {
+            subjectName: "Математика",
+            chapterName: "Інтеграли",
+            testName: "Визначені інтеграли",
+            testinfo: testInfoFilter
+        }).then(response =>{
+            console.log(response);
+        }).catch(err =>{
+            console.log(err);
+            console.log("Error to save test");
+        })
+    }
     
    
 

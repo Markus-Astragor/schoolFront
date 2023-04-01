@@ -58,7 +58,7 @@ function Login(props) {
 
         if(respPerson == 'teacher')
         {
-          navigateUser('/');
+          navigateUser('/teacherpage');
         }
 
       }).catch(err =>{

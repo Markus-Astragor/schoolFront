@@ -7,6 +7,7 @@ function Prefutter(){
         <div className="container">
             <div className="PreFutter">
                 <div className="studyboy"></div>
+                
                 <div className="white_text_box">
                     <div>
                         <h2> Mission, Vision, and Values</h2>
@@ -14,6 +15,7 @@ function Prefutter(){
                     </div>
                     <div className="green_button">LEARN MORE</div>
                 </div>
+
                 <div className="hollow1"></div>
                 <div className="hollow2"></div>
             </div>

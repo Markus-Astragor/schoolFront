@@ -65,7 +65,7 @@ function Register() {
 
         if(respPerson == 'teacher')
         {
-          navigateUser('/');
+          navigateUser('/teacherpage');
         }
 
 
