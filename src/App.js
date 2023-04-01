@@ -18,14 +18,12 @@ function App() {
 
 
           <Routes>
+
             <Route element={<Login_and_register/>} path='/authoriztion'/>
             <Route element={<Main_page/>} path='/'/>
-            <Route element={<UserPage/>} path='/userpage'/>
             <Route element={<DeniedAccess/>} path='/deniedacess' />
-            {/* <Route element={<UserPage/>} path="/userpage/*"> */}
-            {/* <Route path="/userpage" element={<UserPage/>}> */}
-              <Route element={<ChooseTests/>} path='/userpage/test'></Route>
-            {/* </Route> */}
+            <Route element={<UserPage/>} path='/userpage/*'/>
+
           </Routes>
 
         </div>

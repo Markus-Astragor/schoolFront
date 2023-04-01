@@ -68,7 +68,7 @@ function UserPage() {
        
     // },[])
 
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false); // State для бургера
 
 
 
@@ -87,17 +87,18 @@ function UserPage() {
             </div> 
 
             <div>
-                {/* <Routes>
-                <Route element={<ChooseTests />} path="/userpage/test"/>
-                </Routes> */}
+
+               <Routes>
+                    <Route path="success" element={<Statistic_Student/> }/>
+                    <Route path="tests" element={<ChooseTests/> }/>
+                    <Route path="history_test" element={<Statistic_Student/> }/>
+                    <Route path="materials" element={<Statistic_Student/> }/>
+
+               </Routes>
 
                 
             </div>
 
-            {/* <div>
-               {sucess ? <Statistic_Student/> : <div></div>} 
-               {tests ? <ChooseTests/>: <div></div>}
-            </div> */}
                 
             
 

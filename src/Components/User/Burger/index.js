@@ -10,28 +10,6 @@ import axios from "axios";
 
 function Burger(props) {
 
-
-    // function OpenSuceess()
-    // {
-
-    //     props.burgerItems.setTests(false);
-    //     props.burgerItems.setSuccess(true);
-    //     props.burgerItems.sethistoryOfTest(false);
-    //     props.burgerItems.setSource(false);
-    //     props.setIsOpen(false);
-
-       
-    // }
-
-    // function OpenTests()
-    // {
-    //     props.burgerItems.setTests(true);
-    //     props.burgerItems.setSuccess(false);
-    //     props.burgerItems.sethistoryOfTest(false);
-    //     props.burgerItems.setSource(false);
-    //     props.setIsOpen(false);
-    // }
-
     
 
     const ExitNavigate = useNavigate();
@@ -39,6 +17,11 @@ function Burger(props) {
     const Exit = () =>{
         localStorage.removeItem('token');
         ExitNavigate('/');
+    }
+
+    function closeBurgerOnLink()
+    {
+        props.setIsOpen(false);
     }
 
     return (
@@ -50,10 +33,10 @@ function Burger(props) {
             </div>
 
             <div className={styles.burger_options}>
-            <NavLink to='/userpage/test'><div className={styles.options_item}>Тести</div></NavLink>
-                <div className={styles.options_item}>Успішність</div>
-                <div className={styles.options_item}>Історія тестів</div>
-                <div className={styles.options_item}>Матеріали</div>
+             <div className={styles.options_item}><NavLink onClick={closeBurgerOnLink}      className={styles.links} to='tests'>Тести</NavLink></div>
+                <div className={styles.options_item}><NavLink onClick={closeBurgerOnLink}  className={styles.links} to='success'>Успішність</NavLink></div>
+                <div className={styles.options_item}><NavLink onClick={closeBurgerOnLink}  className={styles.links} to='history_test'>Історія Тестів</NavLink></div>
+                <div className={styles.options_item}><NavLink onClick={closeBurgerOnLink}  className={styles.links} to='materials'>Матеріали</NavLink></div>
                 <div onClick={Exit} className={styles.options_item}>Вийти</div>
             </div>
 
