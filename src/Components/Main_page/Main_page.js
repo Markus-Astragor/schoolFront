@@ -27,7 +27,7 @@ import circle_2 from '../../images/mainPage/normal_circle.png';
 import arrow_down from '../../images/mainPage/scroll.png';
 import Context from '../UseContext/indexContext';
 import { NavLink } from 'react-router-dom';
-import ConstructorTests from '../User/ConstructorTests/ConstructorTests';
+import ConstructorTests from '../TeacherPage/ConstructorTests/ConstructorTests';
 import Prefutter from '../Prefutter/index.js';
 
 import Statistic_Student from '../Statistics_Student/index.js';

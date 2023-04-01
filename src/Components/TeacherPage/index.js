@@ -4,7 +4,7 @@ import React, {useState, useEffect} from "react";
 import { Route } from "react-router-dom";
 
 import styles from './style.module.css';
-import ConstructorTests from "../User/ConstructorTests/ConstructorTests";
+import ConstructorTests from "../TeacherPage/ConstructorTests/ConstructorTests.js";
 import { Routes, useNavigate } from "react-router-dom";
 import Burger from "./Burger";
 import burgerIcon from '../../images/BurgerMenu/burger.png';
