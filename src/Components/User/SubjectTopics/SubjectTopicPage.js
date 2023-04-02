@@ -1,22 +1,8 @@
 import React, { useState } from 'react'
 import styles from './SubjectTopicPage.module.css';
-import { useRef } from 'react';
-
+import dropDownArrow from '../../../images/UserPageImages/dropDownArrow.png'
 
 function SubjectTopicPage() {
-  // let dropDownList = useRef(null);
-  // function openList(){
-
-  //   if(dropDownList.current.style.opacity != '1'){
-  //     dropDownList.current.style.opacity = '1';
-  //     dropDownList.current.style.height = '130px';
-  //   }
-  //   else{
-  //     dropDownList.current.style.opacity = '0';
-  //     dropDownList.current.style.height = '0px';
-  //   }
-  // }
-
   let [isOpen, setIsOpen] = useState(false);
 
   function openList(e) {
@@ -35,7 +21,14 @@ function SubjectTopicPage() {
         <h2>Математика завдання за темами</h2>
       </header>
       <div className={styles.Topics}>
-        <h3 onClick={openList}>Числа і вирази</h3>
+
+        <div onClick={openList} className={styles.TopicName}>
+        <h3>Числа і вирази</h3>
+        <div className={styles.dropDownImage}>
+        <img src={dropDownArrow} width="20px"/>
+        </div>
+        </div>
+        
         <div className={isOpen ? styles.dropDownShow : styles.dropDown}>
           <div className={styles.TopicsContent}>
             <p>Дійсні числа</p>
@@ -47,16 +40,6 @@ function SubjectTopicPage() {
         </div>
         <hr />
       </div>
-      {/* <div className={styles.Topics}>
-        <h3 onClick={openList}>Числа і вирази</h3>
-          <div className={isOpen? styles.dropDownShow : styles.dropDown}>
-              <p>Дійсні числа</p>
-              <p>Дійсні числа</p>
-              <p>Дійсні числа</p>
-              <p>Дійсні числа</p>
-          </div>
-        <hr />
-      </div> */}
     </div>
   )
 }

@@ -21,11 +21,25 @@ header{
   margin: 0 auto;
 }
 
-.Topics > h3{
+.Topics h3{
   font-size: 35px;
   color: yellow;
 }
 
+.TopicName{
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropDownImage{
+  display: flex;
+  align-items: center;
+}
+
+/* .dropDownImage > img{
+  transform: rotate(90deg);
+} */
+/* ===========================  DropDown show or not  ================================*/
 .dropDown{
   color: white;
   font-weight: bold;
