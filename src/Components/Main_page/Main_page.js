@@ -33,6 +33,7 @@ import Prefutter from '../Prefutter/index.js';
 import Statistic_Student from '../Statistics_Student/index.js';
 import Video_block from '../Video_block/index.js';
 import ChooseTests from '../User/ChooseTests/ChooseTests';
+import SubjectTopicPage from '../User/SubjectTopics/SubjectTopicPage';
 
 
 
@@ -162,7 +163,7 @@ function Main_page() {
       <AboutUs GetAboutRef = {GetAboutRef} />
       <Prefutter/>
       <ChooseTests />
-
+      <SubjectTopicPage/>    
     </div>
   )
 }
