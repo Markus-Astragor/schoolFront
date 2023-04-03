@@ -4,6 +4,10 @@ import styles from './SubjectTopicPage.module.css';
 
 let SubjectTopics = [
   {title: 'Математика завдання за темами', subjectTheme: 'Числа і вирази', theme: 'Дійсні числа', progress: '0%'},
+  {subjectTheme: 'Числа і вирази', theme: 'Дійсні числа', progress: '0%'},
+  {subjectTheme: 'Числа і вирази', theme: 'Дійсні числа', progress: '0%'},
+  {subjectTheme: 'Числа і вирази', theme: 'Дійсні числа', progress: '0%'},
+  {subjectTheme: 'Числа і вирази', theme: 'Дійсні числа', progress: '0%'},
 ]
 
 let SubjectTopicsArray = SubjectTopics.map(

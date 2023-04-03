@@ -36,9 +36,16 @@ header{
   align-items: center;
 }
 
-/* .dropDownImage > img{
-  transform: rotate(90deg);
-} */
+.dropDownArrow{
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.dropDownArrowRotated{
+  transform: rotate(-90deg);
+  transition: 0.5s;
+  cursor: pointer;
+}
 /* ===========================  DropDown show or not  ================================*/
 .dropDown{
   color: white;

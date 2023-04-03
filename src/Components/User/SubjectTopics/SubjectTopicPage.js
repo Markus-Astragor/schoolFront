@@ -25,7 +25,7 @@ function SubjectTopicPage(props) {
         <div onClick={openList} className={styles.TopicName}>
         <h3>{props.subjectTheme}</h3>
         <div className={styles.dropDownImage}>
-        <img src={dropDownArrow} width="20px"/>
+        <img src={dropDownArrow} width="20px" className={isOpen ? styles.dropDownArrowRotated : styles.dropDownArrow}/>
         </div>
         </div>
         
