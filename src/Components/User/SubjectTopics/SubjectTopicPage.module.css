@@ -9,11 +9,11 @@
 
 header{
   color: white;
-  height: 30vh;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 35px;
+  padding-top: 20px;
 }
 
 .Topics{

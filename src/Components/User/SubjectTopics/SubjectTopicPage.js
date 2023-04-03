@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './SubjectTopicPage.module.css';
 import dropDownArrow from '../../../images/UserPageImages/dropDownArrow.png'
 
-function SubjectTopicPage() {
+function SubjectTopicPage(props) {
   let [isOpen, setIsOpen] = useState(false);
 
   function openList(e) {
@@ -16,14 +16,14 @@ function SubjectTopicPage() {
 
   }
   return (
-    <div className={styles.SubjectTopicPage}>
+    <div>
       <header>
-        <h2>Математика завдання за темами</h2>
+        <h2>{props.title}</h2>
       </header>
       <div className={styles.Topics}>
 
         <div onClick={openList} className={styles.TopicName}>
-        <h3>Числа і вирази</h3>
+        <h3>{props.subjectTheme}</h3>
         <div className={styles.dropDownImage}>
         <img src={dropDownArrow} width="20px"/>
         </div>
@@ -31,16 +31,16 @@ function SubjectTopicPage() {
         
         <div className={isOpen ? styles.dropDownShow : styles.dropDown}>
           <div className={styles.TopicsContent}>
-            <p>Дійсні числа</p>
+            <p>{props.theme}</p>
             <div className={styles.buttonCircle}>
-              <div className={styles.circle}>0%</div>
+              <div className={styles.circle}>{props.progress}</div>
               <button>Почати</button>
             </div>
           </div>
         </div>
         <hr />
       </div>
-    </div>
+      </div> 
   )
 }
 
