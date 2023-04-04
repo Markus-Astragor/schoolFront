@@ -54,11 +54,11 @@ header{
   transition: 1s;
   opacity: 0;
   overflow: hidden;
-  height: 0px;
+  max-height: 0px;
 }
 
 .dropDownShow{
-  height: 70px;
+  max-height: 300px;
   opacity: 1;
   transition: 1s;
   color: white;
