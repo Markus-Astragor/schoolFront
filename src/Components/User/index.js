@@ -75,11 +75,12 @@ function UserPage() {
 
             <div>
 
-               <Routes>
+            <Routes>
                     <Route path="success" element={<Statistic_Student/> }/>
-                    <Route path="tests" element={<ChooseTests/> }/>
+                    <Route path="tests/*" element={<ChooseTests/> }/>
                     <Route path="history_test" element={<Statistic_Student/> }/>
                     <Route path="materials" element={<Statistic_Student/> }/>
+                    <Route path="math" element={<Statistic_Student/>}/> 
 
                </Routes>
 

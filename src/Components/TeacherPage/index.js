@@ -36,18 +36,18 @@ function TeacherPage()
         })
     }
 
-    useEffect(()=>{
-        const teacherToken = localStorage.getItem('token');
-        const token = JSON.parse(teacherToken);
-        if(!token)
-        {
-            navigate('/deniedacess');
-            return;
-        }
+    // useEffect(()=>{
+    //     const teacherToken = localStorage.getItem('token');
+    //     const token = JSON.parse(teacherToken);
+    //     if(!token)
+    //     {
+    //         navigate('/deniedacess');
+    //         return;
+    //     }
 
-        GetUserInfo(token);
+    //     GetUserInfo(token);
        
-    },[])
+    // },[])
 
     const [isOpen, setIsOpen] = useState(false); // State для бургера
 

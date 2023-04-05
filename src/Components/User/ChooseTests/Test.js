@@ -8,7 +8,7 @@ function Test(props){
             <img src={props.image} className="Subject_image"/>
             </div>
             <div className="Subject_block">
-                <NavLink to={'/userpage/test'+props.link}><span>{props.subjectName}</span></NavLink>
+                <NavLink to={props.link}><span>{props.subjectName}</span></NavLink>
             </div> 
         </div>
     )
