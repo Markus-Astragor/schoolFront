@@ -6,12 +6,15 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import UserPage from './Components/User';
 import DeniedAccess from './Components/DeniedAccess';
 import TeacherPage from './Components/TeacherPage';
+import Context from './Components/UseContext/indexContext.js';
 
 function App() {
 
+  const [testInfo, setTestinfo] = useState('some text');
 
   return (
 
+    <Context.Provider value={{testInfo: testInfo, setTestinfo: setTestinfo}}>
       <BrowserRouter>
         <div className="App">
 
@@ -28,7 +31,8 @@ function App() {
 
         </div>
       </BrowserRouter>
-  );
+      </Context.Provider>
+  )
 }
 
 export default App;

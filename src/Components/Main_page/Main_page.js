@@ -34,6 +34,7 @@ import Statistic_Student from '../Statistics_Student/index.js';
 import Video_block from '../Video_block/index.js';
 import ChooseTests from '../User/ChooseTests/ChooseTests';
 import SubjectTopicsArr from '../User/SubjectTopics/SubjectTopicsArr';
+import TestInfo from '../TeacherPage/TestInfo';
 
 
 
@@ -164,6 +165,7 @@ function Main_page() {
       <Prefutter/>
       <ChooseTests />
       <SubjectTopicsArr/>    
+      <TestInfo/>
     </div>
   )
 }
