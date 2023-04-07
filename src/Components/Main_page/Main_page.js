@@ -35,6 +35,7 @@ import Video_block from '../Video_block/index.js';
 import ChooseTests from '../User/ChooseTests/ChooseTests';
 import SubjectTopicsArr from '../User/SubjectTopics/SubjectTopicsArr';
 import TestInfo from '../TeacherPage/TestInfo';
+import TeacherTests from '../TeacherPage/TeacherTests';
 
 
 
@@ -166,6 +167,7 @@ function Main_page() {
       <ChooseTests />
       <SubjectTopicsArr/>    
       <TestInfo/>
+      <TeacherTests/>
     </div>
   )
 }

@@ -1,0 +1,167 @@
+
+
+.teacher_tests{
+    height: 100vh;
+    width: 100%;
+    background: url('../../../images//TeacgerPage/tests/Background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.teacher_tests_info{
+    width: 55%;
+    min-height: 50%;
+    border-radius: 15px;
+    background-color: aliceblue;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    font-family: 'Khula', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.teacher_tests_info_navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items:  center;
+    margin-bottom: 20px;
+}
+
+.navbar_icon{
+    width: 30px;
+    cursor: pointer;
+}
+
+.navbar_title{
+    color: #153D29;
+    font-size: 30px;
+
+    text-shadow: 0px 6.79056px 6.79056px rgba(0, 0, 0, 0.25);
+
+}
+/*===========Content (Tests)============*/
+
+.tests_content{
+    flex-grow: 1;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 80px auto;
+    row-gap: 10px;
+    column-gap: 10px;
+    
+}
+
+
+
+.tests_content_subject{
+    text-align: center;
+    padding: 15px 10px;
+    width: 150px;
+    box-sizing: border-box;
+    background-color: #153D29;
+    color: #fff;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/*=======Buttons============*/
+
+.teacher_tests_info_buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tests_info_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 40px;
+    border-radius: 90px;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+.tests_info_btn>span{
+    margin-right: 10px;
+}
+
+.button_icon{
+    width: 28px;
+    height: auto;
+    cursor: pointer;
+    transform: rotateY(90deg);
+    transition: 0.6s ease-out;
+}
+
+.tests_info_btn:hover .button_icon{
+    transform: rotateY(0deg);
+    transition: 0.6s ease-out;
+}
+
+/* .button_icon:hover{
+    transform: rotateY(0deg);
+    transition: 0.6s ease-out;
+} */
+
+.btn_blue{
+    background-color: #044663;
+}
+
+.btn_green{
+    background-color: #046307;
+}
+
+.btn_red{
+    background-color: #CB0B0B;
+}
+
+
+
+
+/*================Адаптивність=========================*/
+
+@media (max-width: 1440px) {
+    .tests_info_btn{
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 1380px) {
+    .tests_content{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 1200px) {
+    .tests_info_btn{
+        font-size: 13px;
+        padding: 10px 15px;
+        
+    }
+
+    .button_icon{
+        width: 16px;
+    }
+}
+
+@media (max-width: 1090px) {
+    .tests_content{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
