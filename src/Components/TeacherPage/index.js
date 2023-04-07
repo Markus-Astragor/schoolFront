@@ -10,8 +10,8 @@ import { Routes, useNavigate } from "react-router-dom";
 import Burger from "./Burger";
 import burgerIcon from '../../images/BurgerMenu/burger.png';
 import axios from "axios";
-import TeacherContext from "../UseContext/teacherPageContext";
 import Context from "../UseContext/indexContext";
+import TeacherTests from './TeacherTests/index.js';
 
 function TeacherPage() {
 
@@ -76,6 +76,7 @@ function TeacherPage() {
 
                     <Routes>
                         <Route path="create-test" element={<ConstructorTests />} />
+                        <Route path="teacher-tests" element={<TeacherTests/>} />
                     </Routes>
 
 
