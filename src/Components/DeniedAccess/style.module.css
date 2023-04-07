@@ -1,12 +1,29 @@
 
 
 .denied_access{
-    text-align: center;
     width: 100%;
     height: 100vh;
+    background: url('../../images/DeniedAccess/background.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    font-size: 36px;
+}
+
+.denied_access_text{
+    border: 4px solid #FCC63D;
+    color: #FCC63D;
+    padding: 20px 40px;
+    text-transform: uppercase;
+    width: fit-content;
+    box-sizing: border-box;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    transform: translateY(-90px);
+    
 }

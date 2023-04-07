@@ -36,6 +36,7 @@ import ChooseTests from '../User/ChooseTests/ChooseTests';
 import SubjectTopicsArr from '../User/SubjectTopics/SubjectTopicsArr';
 import TestInfo from '../TeacherPage/TestInfo';
 import TeacherTests from '../TeacherPage/TeacherTests';
+import DeniedAccess from '../DeniedAccess';
 
 
 
@@ -166,8 +167,8 @@ function Main_page() {
       <Prefutter/>
       <ChooseTests />
       <SubjectTopicsArr/>    
-      <TestInfo/>
       <TeacherTests/>
+      <DeniedAccess/>
     </div>
   )
 }
