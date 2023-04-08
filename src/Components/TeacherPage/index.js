@@ -12,6 +12,7 @@ import burgerIcon from '../../images/BurgerMenu/burger.png';
 import axios from "axios";
 import Context from "../UseContext/indexContext";
 import TeacherTests from './TeacherTests/index.js';
+import TestInfo from "./TestInfo";
 
 function TeacherPage() {
 
@@ -75,8 +76,9 @@ function TeacherPage() {
                 <div>
 
                     <Routes>
-                        <Route path="create-test" element={<ConstructorTests />} />
+                        <Route path="create-test/constructor" element={<ConstructorTests />} />
                         <Route path="teacher-tests" element={<TeacherTests/>} />
+                        <Route path="create-test" element={<TestInfo/>} />
                     </Routes>
 
 

@@ -21,7 +21,7 @@ function TeacherTests(){
         navigate('/teacherpage');
     }
 
-    function goToConstrcutor(){
+    function openTestInfo(){
         navigate('/teacherpage/create-test');
     }
 
@@ -52,7 +52,7 @@ function TeacherTests(){
                         <img className={style.button_icon} src={editIcon}/>
                     </div>
 
-                    <div onClick={goToConstrcutor} className={`${style.tests_info_btn } ${style.btn_green}`}>
+                    <div onClick={openTestInfo} className={`${style.tests_info_btn } ${style.btn_green}`}>
                         <span>Створити тест</span>
                         <img className={style.button_icon} src={addIcon}/>
                     </div>

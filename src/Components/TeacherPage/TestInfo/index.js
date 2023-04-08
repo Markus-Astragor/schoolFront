@@ -35,7 +35,7 @@ function TestInfo() {
 
      console.log(testInfoObj);
 
-     navigate('/teacherpage/create-test');
+     navigate('constructor');
     }
 
 
