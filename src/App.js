@@ -12,6 +12,11 @@ function App() {
 
   const [testInfo, setTestinfo] = useState('some text');
 
+  useEffect(()=>{
+    
+    console.log(testInfo);
+  },[testInfo])
+
   return (
 
     <Context.Provider value={{testInfo: testInfo, setTestinfo: setTestinfo}}>

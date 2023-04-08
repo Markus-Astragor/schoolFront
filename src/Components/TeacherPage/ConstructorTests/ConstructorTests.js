@@ -103,7 +103,7 @@ function ConstructorTests() {
 
                 <div className={ConstructStyles.addTestsBtn}>
                     <button onClick={addTestBlock}>Додати блок запитань</button>
-                    <button onClick={()=>{setgetValueMain(true)}} >Get Info</button>
+                    <button onClick={()=>{setgetValueMain(true)}} >Зберегти Тест</button>
                 </div>
 
             </div>

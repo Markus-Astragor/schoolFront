@@ -7,9 +7,12 @@ import styles from './style.module.css';
 import { useRef } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import Context from '../../UseContext/indexContext.js';
 
 function TestInfo() {
 
+    const TestContext  = useContext(Context);
 
     const [subject, setSubject] = useState();
     const [testName, setTestName] = useState();
@@ -33,9 +36,11 @@ function TestInfo() {
         subject
      }
 
-     console.log(testInfoObj);
 
-     navigate('constructor');
+     console.log(testInfoObj);
+     TestContext.setTestinfo(testInfoObj);
+
+      navigate('constructor');
     }
 
 
