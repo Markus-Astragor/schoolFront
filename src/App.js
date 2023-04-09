@@ -11,6 +11,7 @@ import Context from './Components/UseContext/indexContext.js';
 function App() {
 
   const [testInfo, setTestinfo] = useState('some text');
+  const [testCode, setTestCode] = useState('');
 
   useEffect(()=>{
     
@@ -19,7 +20,7 @@ function App() {
 
   return (
 
-    <Context.Provider value={{testInfo: testInfo, setTestinfo: setTestinfo}}>
+    <Context.Provider value={{testInfo: testInfo, setTestinfo: setTestinfo, testCode: testCode, setTestCode }}>
       <BrowserRouter>
         <div className="App">
 

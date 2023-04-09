@@ -26,8 +26,11 @@ function TeacherPage() {
     function GetUserInfo(userToken) {
 
 
-        axios.post('http://localhost:8080/user-info', {
-            token: userToken,
+        axios.get('http://localhost:8080/user-info', {
+            params: {
+                token: userToken
+            }
+            
         }).then(response => {
             console.log(response);
             setUserName(response.data.username)
@@ -39,18 +42,18 @@ function TeacherPage() {
         })
     }
 
-    // useEffect(()=>{
-    //     const teacherToken = localStorage.getItem('token');
-    //     const token = JSON.parse(teacherToken);
-    //     if(!token)
-    //     {
-    //         navigate('/deniedacess');
-    //         return;
-    //     }
+    useEffect(()=>{
+        const teacherToken = localStorage.getItem('token');
+        const token = JSON.parse(teacherToken);
+        if(!token)
+        {
+            navigate('/deniedacess');
+            return;
+        }
 
-    //     GetUserInfo(token);
+        GetUserInfo(token);
 
-    // },[])
+    },[])
 
 
 

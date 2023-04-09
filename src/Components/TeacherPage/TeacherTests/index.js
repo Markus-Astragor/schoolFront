@@ -1,6 +1,6 @@
 
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 
 import style from "./style.module.css";
@@ -10,10 +10,13 @@ import arrowIocn from '../../../images/TeacgerPage/tests/icon-arrow.png';
 import editIcon from '../../../images/TeacgerPage/tests/free-icon-pencil-4211935 1.png';
 import addIcon from '../../../images/TeacgerPage/tests/free-icon-plus-sign-3945636 1.png';
 import deleteIcon from '../../../images/TeacgerPage/tests/free-icon-garbage-9945817 1.png';
-import { useNavigate } from "react-router-dom";
+import { json, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 
 function TeacherTests(){
+
+    const [teacherTests, setTeacherTests] = useState([]);
 
     const navigate = useNavigate();
 
@@ -25,7 +28,28 @@ function TeacherTests(){
         navigate('/teacherpage/create-test');
     }
 
-    const arrayOfSubjects = ['Математика', 'Фізика', 'Українська мова', "Зарубіжна література", "Інформатика", "Біологія", 'Українська література']
+    
+
+    useEffect(()=>{
+        const token = localStorage.getItem('token');
+        const parsedToken = JSON.parse(token);
+        if(!parsedToken)
+        {
+            navigate('/deniedacess');
+            return;
+        }
+
+        axios.get('http://localhost:8080/teacher-tests', {
+            params:{
+                token: parsedToken
+            }
+        }).then(response =>{
+            console.log(response);
+            setTeacherTests(response.data);
+        }).catch(err =>{
+            console.log(err);
+        })
+    },[])
 
     return(
         <div className={style.teacher_tests}>
@@ -39,9 +63,9 @@ function TeacherTests(){
                 </div>
 
                 <div className={style.tests_content}>
-                    {arrayOfSubjects.map(subject =>{
+                    {teacherTests.map(subject =>{
                         return(
-                            <div className={style.tests_content_subject}>{subject}</div>
+                            <div className={style.tests_content_subject}>{subject.SubjectName}</div>
                         )
                     })}
                 </div>

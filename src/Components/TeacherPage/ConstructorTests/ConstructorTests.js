@@ -4,8 +4,13 @@ import TestBlock from './TestBlock';
 import { useNavigate } from 'react-router-dom';
 import {v4 as uuidv4} from "uuid";
 import axios from 'axios';
+import { useContext } from 'react';
+import Context from '../../UseContext/indexContext';
 
 function ConstructorTests() {
+
+
+    const testContext = useContext(Context);
 
     const navigate = useNavigate();
     const errorParagraph = useRef(null);
@@ -64,14 +69,24 @@ function ConstructorTests() {
 
     function saveTest(testInfoFilter) // Функція збереження тесту в MongoDB
     {
+
+        const token = localStorage.getItem('token');
+        const parsedToken = JSON.parse(token);
+        if(!parsedToken)
+        {
+            navigate('/deniedacess');
+            return;
+        }
         
         axios.post('http://localhost:8080/create-test', {
-            subjectName: "Математика",
-            chapterName: "Інтеграли",
-            testName: "Визначені інтеграли",
-            testinfo: testInfoFilter
+            subjectName: testContext.testInfo.subject,
+            chapterName: testContext.testInfo.theme,
+            testName: testContext.testInfo.testName,
+            testinfo: testInfoFilter,
+            token: parsedToken
         }).then(response =>{
             console.log(response);
+            testContext.setTestCode(response.data.test_code)
             navigate('/teacherpage/test-info');
             
         }).catch(err =>{

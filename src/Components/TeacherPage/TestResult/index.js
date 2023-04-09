@@ -70,7 +70,7 @@ function TestResult() {
                                     </div>
                                 </div>
 
-                                <div className={styles.info_block_content_form_code}></div>
+                                <div className={styles.info_block_content_form_code}>{testContext.testCode}</div>
                                 
 
                                 
