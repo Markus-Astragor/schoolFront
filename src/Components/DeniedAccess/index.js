@@ -22,6 +22,7 @@ function DeniedAccess()
     
             <div className={styles.denied_access_text} >Page Not Found</div>
             
+            
         </div>
     );
 }
