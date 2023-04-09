@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import ConstructStyles from './ConstructorTests.module.css';
 import TestBlock from './TestBlock';
-
+import { useNavigate } from 'react-router-dom';
 import {v4 as uuidv4} from "uuid";
 import axios from 'axios';
 
 function ConstructorTests() {
 
+    const navigate = useNavigate();
     const errorParagraph = useRef(null);
 
     const [numberBlocks, setNumberBlocks] = useState([]);
@@ -63,6 +64,7 @@ function ConstructorTests() {
 
     function saveTest(testInfoFilter) // Функція збереження тесту в MongoDB
     {
+        
         axios.post('http://localhost:8080/create-test', {
             subjectName: "Математика",
             chapterName: "Інтеграли",
@@ -70,6 +72,8 @@ function ConstructorTests() {
             testinfo: testInfoFilter
         }).then(response =>{
             console.log(response);
+            navigate('/teacherpage/test-info');
+            
         }).catch(err =>{
             console.log(err);
             console.log("Error to save test");

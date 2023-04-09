@@ -13,6 +13,7 @@ import axios from "axios";
 import Context from "../UseContext/indexContext";
 import TeacherTests from './TeacherTests/index.js';
 import TestInfo from "./TestInfo";
+import TestResult from "./TestResult";
 
 function TeacherPage() {
 
@@ -79,6 +80,7 @@ function TeacherPage() {
                         <Route path="create-test/constructor" element={<ConstructorTests />} />
                         <Route path="teacher-tests" element={<TeacherTests/>} />
                         <Route path="create-test" element={<TestInfo/>} />
+                        <Route path="test-info" element={<TestResult/>}/>
                     </Routes>
 
 

@@ -37,6 +37,7 @@ import SubjectTopicsArr from '../User/SubjectTopics/SubjectTopicsArr';
 import TestInfo from '../TeacherPage/TestInfo';
 import TeacherTests from '../TeacherPage/TeacherTests';
 import DeniedAccess from '../DeniedAccess';
+import TestResult from '../TeacherPage/TestResult';
 
 
 
@@ -169,6 +170,7 @@ function Main_page() {
       <SubjectTopicsArr/>    
       <TeacherTests/>
       <DeniedAccess/>
+      <TestResult/>
     </div>
   )
 }
