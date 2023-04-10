@@ -168,9 +168,6 @@ function Main_page() {
       <Prefutter/>
       <ChooseTests />
       <SubjectTopicsArr/>    
-      <TeacherTests/>
-      <DeniedAccess/>
-      <TestResult/>
     </div>
   )
 }

@@ -20,7 +20,7 @@ function DeniedAccess()
     return(
         <div className={styles.denied_access}>
     
-            <div className={styles.denied_access_text} >Page Not Found</div>
+            <div onClick={ReturnMainPage} className={styles.denied_access_text} >Page Not Found</div>
             
             
         </div>
