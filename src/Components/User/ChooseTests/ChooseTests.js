@@ -11,7 +11,10 @@ function ChooseTests(){
                 <div className="ChooseTests_header">
                     <h2>Вибір тестів</h2>
                 </div>
-            <Test_arr/>
+                <div className="slider_wrapper">
+                    <Test_arr/>
+                </div>
+            
             </div>}/>
 
                 <Route path="math" element={<div>Math</div>}/>

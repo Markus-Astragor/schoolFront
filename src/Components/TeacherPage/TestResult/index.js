@@ -9,9 +9,11 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import Context from '../../UseContext/indexContext.js';
-import arrowImage from '../../../images/TeacgerPage/TestInfo/icon-arrow.png';
-import monkeyImage from '../../../images/TeacgerPage/TestInfo/icon-monkey.png';
-import contentImage from  '../../../images/TeacgerPage/TestInfo/task-list.png';
+
+import homeIcon from '../../../images/TeacherResultPage/icon_home.png';
+import bananaIcon from '../../../images/TeacherResultPage/icon-bananas.png';
+import copyIcon from '../../../images/TeacherResultPage/icon-copy.png';
+import taskImage from '../../../images/TeacherResultPage/task-list.png';
 
 function TestResult() {
 
@@ -42,15 +44,15 @@ function TestResult() {
                 <div className={styles.test_info_block}>
 
                         <div className={styles.test_info_block_top}>
-                            <img src={arrowImage} className={styles.info_block_top_icon}/>
+                            <img src={homeIcon} className={styles.info_block_top_icon}/>
                             <span className={styles.info_block_title}>Інформація про предмет</span>
-                            <img src={monkeyImage} className={`${styles.info_block_top_icon} ${styles.monkeyIcon}`}/>
+                            <img src={bananaIcon} className={`${styles.info_block_top_icon} ${styles.monkeyIcon}`}/>
                         </div>
 
                         <div className={styles.test_info_block_content}>
 
                             <div className={styles.info_block_content_image}>
-                                <img className={styles.content_image} src={contentImage}/>
+                                <img className={styles.content_image} src={taskImage}/>
                             </div>
 
                             <div className={styles.info_block_content_form_block}>
@@ -70,7 +72,10 @@ function TestResult() {
                                     </div>
                                 </div>
 
-                                <div className={styles.info_block_content_form_code}>{testContext.testCode}</div>
+                                <div className={styles.info_block_content_form_code}>
+                                    <span className={styles.code_text}>d8646454sa4da65455465jdsna</span>
+                                    <img className={styles.copyCode_imaage} src={copyIcon}/>
+                                </div>
                                 
 
                                 

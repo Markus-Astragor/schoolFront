@@ -81,8 +81,9 @@
 
 .teacher_tests_info_buttons{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .tests_info_btn{
@@ -104,14 +105,14 @@
     width: 28px;
     height: auto;
     cursor: pointer;
-    transform: rotateY(90deg);
+    /* transform: rotateY(90deg); */
     transition: 0.6s ease-out;
 }
 
-.tests_info_btn:hover .button_icon{
+/* .tests_info_btn:hover .button_icon{
     transform: rotateY(0deg);
     transition: 0.6s ease-out;
-}
+} */
 
 /* .button_icon:hover{
     transform: rotateY(0deg);

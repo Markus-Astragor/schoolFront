@@ -168,6 +168,7 @@ function Main_page() {
       <Prefutter/>
       <ChooseTests />
       <SubjectTopicsArr/>    
+      <TestResult/>
     </div>
   )
 }

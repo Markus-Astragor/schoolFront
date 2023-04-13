@@ -2,17 +2,22 @@ import React from "react";
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import history from '../../../images/ChooseTests/history.png';
-import geography from '../../../images/ChooseTests/geography.png';
-import math from '../../../images/ChooseTests/math.png';
-import ukrainian from '../../../images/ChooseTests/ukrainian.png';
-import ukrainian_literature from '../../../images/ChooseTests/ukrainian_literature.png';
-import english from '../../../images/ChooseTests/english.png';
+import chemistry from '../../../images/ChooseTests/SubjectImages/Сhemistry.png';
+import geography from '../../../images/ChooseTests/SubjectImages/Geography.png';
+import math from '../../../images/ChooseTests//SubjectImages/Math.png';
+import ukrainian from '../../../images/ChooseTests/SubjectImages/Ukrainian-language.png';
+import ukrainian_literature from '../../../images/ChooseTests/SubjectImages/World-Literature.png';
+import english from '../../../images/ChooseTests/SubjectImages/English.png';
 import Test from "./Test";
 
 
 let subjects = [
-    { image: history, subjectName: 'Історія', link: 'history' },
+    { image: chemistry, subjectName: 'Хімія', link: 'chemistry' },
+    { image: geography, subjectName: 'Географія', link: 'geography' },
+    { image: math, subjectName: 'Математика', link: 'math' },
+    { image: ukrainian, subjectName: 'Українська мова', link: 'ukrainian' },
+    { image: ukrainian_literature, subjectName: 'Українська література', link: 'ukrainian_literature' },
+    { image: english, subjectName: 'Англійська', link: 'english' },
     { image: geography, subjectName: 'Географія', link: 'geography' },
     { image: math, subjectName: 'Математика', link: 'math' },
     { image: ukrainian, subjectName: 'Українська мова', link: 'ukrainian' },
@@ -34,7 +39,7 @@ function SampleNextArrow(props) {
     return (
         <div
             className={className}
-            style={{ ...style, display: "none" }}
+            style={{ ...style, display: "block", height: '50px'}}
             onClick={onClick}
         />
     );
@@ -45,7 +50,7 @@ function SamplePrevArrow(props) {
     return (
         <div
             className={className}
-            style={{ ...style, display: "none" }}
+            style={{ ...style, display: "block" }}
             onClick={onClick}
         />
     );
@@ -97,6 +102,8 @@ function Test_arr() {
 
         ]
     }
+
+
     return (
         <div className="Test_arr">
             <Slider {...settings}>

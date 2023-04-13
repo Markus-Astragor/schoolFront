@@ -1,0 +1,40 @@
+
+
+.aboutUs{
+    background-image: url('../../../images/AboutUs/aboutBackground.png');
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.aboutUs_content{
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aboutUs_content_left{
+    width: 40%;
+}
+
+
+.content_left_text{
+    color: #fff;
+    max-width: 430px;
+}
+
+.content_left_text_title{
+    font-size: 75px;
+    margin-bottom: 70px;
+}
+
+.aboutUs_content_right{
+    width: 60%;
+    height: 100vh;
+    background-color: bisque;
+}
