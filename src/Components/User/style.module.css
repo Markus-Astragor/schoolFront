@@ -48,7 +48,8 @@
     transition: 0.4s ease-out;
     transform: translateX(-300px);
     box-sizing: border-box;
-    z-index: 2;
+    z-index: 5;
+  
 }
 
 .burger_show{
@@ -60,7 +61,7 @@
     background-color: #1FA67B;
     transition: 0.4s ease-in-out;
     transform: translateX(0);
-    z-index: 2;
+    z-index: 5;
     
 }
 
@@ -70,4 +71,6 @@
     position: absolute;
     top: 20px;
     left: 20px;
+    z-index: 1;
+
 }

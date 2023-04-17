@@ -166,9 +166,7 @@ function Main_page() {
 
       <AboutUs GetAboutRef = {GetAboutRef} />
       <Prefutter/>
-      <ChooseTests />
-      <SubjectTopicsArr/>    
-      <TestResult/>
+
     </div>
   )
 }

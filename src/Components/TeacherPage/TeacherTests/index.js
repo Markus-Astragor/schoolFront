@@ -30,26 +30,26 @@ function TeacherTests(){
 
     
 
-    // useEffect(()=>{
-    //     const token = localStorage.getItem('token');
-    //     const parsedToken = JSON.parse(token);
-    //     if(!parsedToken)
-    //     {
-    //         navigate('/deniedacess');
-    //         return;
-    //     }
+    useEffect(()=>{
+        const token = localStorage.getItem('token');
+        const parsedToken = JSON.parse(token);
+        if(!parsedToken)
+        {
+            navigate('/deniedacess');
+            return;
+        }
 
-    //     axios.get('http://localhost:8080/teacher-tests', {
-    //         params:{
-    //             token: parsedToken
-    //         }
-    //     }).then(response =>{
-    //         console.log(response);
-    //         setTeacherTests(response.data);
-    //     }).catch(err =>{
-    //         console.log(err);
-    //     })
-    // },[])
+        axios.get('http://localhost:8080/teacher-tests', {
+            params:{
+                token: parsedToken
+            }
+        }).then(response =>{
+            console.log(response);
+            setTeacherTests(response.data);
+        }).catch(err =>{
+            console.log(err);
+        })
+    },[])
 
     return(
         <div className={style.teacher_tests}>

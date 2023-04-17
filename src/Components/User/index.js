@@ -27,9 +27,7 @@ function UserPage() {
     {
        
 
-        axios.post('http://localhost:8080/user-info', {
-            token: userToken,
-        }).then(response =>{
+        axios.get(`http://localhost:8080/user-info?token=${userToken}`).then(response =>{
             console.log(response);
             setUserName(response.data.username)
         }).catch(err =>{
