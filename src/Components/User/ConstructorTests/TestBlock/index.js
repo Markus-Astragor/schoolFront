@@ -10,7 +10,7 @@ function TestBlock({questionInfo ,GetValueMainState, index, setgetValueMain,Save
 
     const [numberOfAnswers, setNumberOfAnswers] = useState([]);     // Масив для зберігання індексів полів для відповідей
     const [answers, setAnswers] = useState([]);         // Масив для зберігання інформації по питанню (Питання, відповідь, правильна відповідь)
-    const [questionInput, setQuestionInput] = useState(''); // State для зберігання питання
+    const [questionInput, setQuestionInput] = useState(questionInfo.question); // State для зберігання питання
     const [Show, SetShow] = useState(false); // State для trigger   
 
 
@@ -72,7 +72,7 @@ function TestBlock({questionInfo ,GetValueMainState, index, setgetValueMain,Save
         <div className={styles.blockTests}>
                 <h3>Питання №{index+1}</h3>
                  
-                <input  placeholder={questionInfo.question} className={styles.mainQuestion} />
+                <input  value={questionInfo.question} className={styles.mainQuestion} />
                 
 
                 {numberOfAnswers.map((question, index) =>{

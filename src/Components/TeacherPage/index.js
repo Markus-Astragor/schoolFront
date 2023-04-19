@@ -42,19 +42,19 @@ function TeacherPage() {
         })
     }
 
-    // useEffect(()=>{
-    //     console.log("UserPgae work on page teacherPage");
-    //     const teacherToken = localStorage.getItem('token');
-    //     const token = JSON.parse(teacherToken);
-    //     if(!token)
-    //     {
-    //         navigate('/deniedacess');
-    //         return;
-    //     }
+    useEffect(()=>{
+        console.log("UserPgae work on page teacherPage");
+        const teacherToken = localStorage.getItem('token');
+        const token = JSON.parse(teacherToken);
+        if(!token)
+        {
+            navigate('/deniedacess');
+            return;
+        }
 
-    //     GetUserInfo(token);
+        GetUserInfo(token);
 
-    // },[])
+    },[])
 
 
 

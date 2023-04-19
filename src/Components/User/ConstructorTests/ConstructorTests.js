@@ -3,7 +3,7 @@ import ConstructStyles from './ConstructorTests.module.css';
 import TestBlock from './TestBlock';
 import { useNavigate } from 'react-router-dom';
 import {v4 as uuidv4} from "uuid";
-import axios from 'axios';
+import axios, { Axios } from 'axios';
 import { useContext } from 'react';
 import Context from '../../UseContext/indexContext';
 import UserContext from '../../UseContext/userContext';
@@ -90,6 +90,8 @@ function ConstructorTests() {
     useEffect(()=>{             //Use Effect для перевірки отрмання даних на верхній рівень
         console.log('testInfoFilter');
         console.log(testInfoFilter);
+
+
         if(!testInfoFilter.length == 0 )
         {
             saveTest(testInfoFilter);
@@ -110,21 +112,37 @@ function ConstructorTests() {
             return;
         }
         
-        axios.post('http://localhost:8080/create-test', {
-            subjectName: testContext.testInfo.subject,
-            chapterName: testContext.testInfo.theme,
-            testName: testContext.testInfo.testName,
+        axios.post('http://localhost:8080/saveUserTest', {
+            subjectName: userTestInfo.SubjectName,
+            chapterName: userTestInfo.chapterName,
+            testName: userTestInfo.testName,
             testinfo: testInfoFilter,
-            token: parsedToken
+            token: parsedToken,
+            test_code: userTestInfo.test_code
         }).then(response =>{
             console.log(response);
-            testContext.setTestCode(response.data.test_code)
-            navigate('/teacherpage/test-info');
+            console.log('Test saved');
+            alert('Test saved');
             
         }).catch(err =>{
             console.log(err);
             console.log("Error to save test");
+            alert('Error to save test');
+            return;
         })
+
+        
+    
+
+        axios.post('http://localhost:8080/test-evaluation', {
+            testCode: userTestInfo.test_code, 
+            userToken: parsedToken
+        }).then(response =>{
+            console.log(response);
+        }).catch(error =>{
+            console.log(error);
+        })
+
     }
     
    
@@ -132,7 +150,8 @@ function ConstructorTests() {
    
     return (
         <div className={ConstructStyles.ConstructorTests}>
-            <h2>{userTestInfo.testName}</h2>
+            {/* <h2>{userTestInfo.testName}</h2> */}
+            <h2>Тест</h2>
 
             { isLoaded ? <div>
 
