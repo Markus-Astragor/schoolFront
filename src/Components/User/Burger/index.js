@@ -37,6 +37,7 @@ function Burger(props) {
                 <div className={styles.options_item}><NavLink onClick={closeBurgerOnLink}  className={styles.links} to='success'>Успішність</NavLink></div>
                 <div className={styles.options_item}><NavLink onClick={closeBurgerOnLink}  className={styles.links} to='history_test'>Історія Тестів</NavLink></div>
                 <div className={styles.options_item}><NavLink onClick={closeBurgerOnLink}  className={styles.links} to='materials'>Матеріали</NavLink></div>
+                <div className={styles.options_item}><NavLink onClick={closeBurgerOnLink}  className={styles.links} to='test'>Тест</NavLink></div>
                 <div onClick={Exit} className={styles.options_item}>Вийти</div>
             </div>
 

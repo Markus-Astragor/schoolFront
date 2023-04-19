@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import './ChooseTests.css';
 import Test_arr from "./Test_arr";
 import { Route, Routes } from "react-router-dom";
@@ -6,26 +6,31 @@ import SubjectTopicsArr from "../SubjectTopics/SubjectTopicsArr";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import closeIcon from '../../../images/PopUPWIndow/closeIcon.png';
+import UserContext from "../../UseContext/userContext";
 
 function ChooseTests(){
 
     const navigate = useNavigate();
+    const userContext = useContext(UserContext);
 
     const [popUpState, setPopUpState] = useState(false);
-    const [testCode, SetTestCode] = useState('');
+    const [testCode, SetTestCode] = useState();
     const [messageError, setMessageError] = useState();
 
     const codeRef = useRef();
 
     const OpenConstructorOfTests = async () => {
+
         setMessageError('');  // Очищення input про про те чи тест був знайдений
 
         const codeValue = codeRef.current.value;        //Витягання значення code з input
         SetTestCode(codeValue);   // Pushing code into use state for global usage
 
-        const response = await axios.get(`http://localhost:8080/find-tests?testCode=${testCode}`); // request which checks whether test by passed code exist 
+        const response = await axios.get(`http://localhost:8080/find-tests?testCode=${codeValue}`); // request which checks whether test by passed code exist 
 
+        
         if(response.data =='Тест не знайдено') {  // if for processing  error
+            console.log(response);
             return setMessageError('Тест не знайдено');
         }
 
@@ -33,26 +38,29 @@ function ChooseTests(){
 
         
         //Перевірити чи існує тест по даному коду +
-        AddUserTest();//Далі викликалти запит AddUserTest 
+        AddUserTest(codeValue);    // Запит який буде зберігати доданий тест до бази даних і буде прив'язаний за юзером
+        userContext.setTestUserCode(codeValue);  // Code тесту ми витягуємо на верх. рівень для того щоб мати можливість передати в компоненту UserTestConstructor
+        navigate('/userpage/test');
         //Перекинути на сторінку для проходження тесту (конструктор тестів) -> Або код тесту передати туда з відси або знайдену інформацію по тесту передати по Context
         // Відобразити там інофрмацію про тест
         // Витягнути всі дані
         // Зберегти результат SaveUserTest
     }
 
-    const AddUserTest = async () =>{
+    const AddUserTest = async (codeValue) =>{
         const token = localStorage.getItem('token');
 
-        // if(!token)
-        // {
-        //     navigate('/deniedacess');
-        // }
+        if(!token)
+        {
+            navigate('/deniedacess');
+        }
+        console.log(codeValue);
 
         const parsed_token = JSON.parse(token);
 
         const response = await axios.post('http://localhost:8080/add-test', {
             token: parsed_token,
-            test_code: testCode,
+            test_code: codeValue,
         });
 
         console.log(response);
