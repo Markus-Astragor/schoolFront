@@ -10,10 +10,12 @@ import UserContext from '../../UseContext/userContext';
 
 function ConstructorTests() {
 
+    const navigate = useNavigate();
+
     const testContext = useContext(Context);
     const userContext = useContext(UserContext);
     const [userTestInfo, setUserTestInfo] = useState();  // State для витягання даних тесту з БД і відображення їх в конструкторі
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false); 
 
 
 
@@ -43,10 +45,7 @@ function ConstructorTests() {
     }
 
 
-    
 
-    const navigate = useNavigate();
-    const errorParagraph = useRef(null);
 
     const [numberBlocks, setNumberBlocks] = useState([]);
 
@@ -88,16 +87,16 @@ function ConstructorTests() {
         })
     },[testInfo])
 
-    // useEffect(()=>{             //Use Effect для перевірки отрмання даних на верхній рівень
-    //     console.log('testInfoFilter');
-    //     console.log(testInfoFilter);
-    //     if(!testInfoFilter.length == 0 )
-    //     {
-    //         saveTest(testInfoFilter);
-    //     }
+    useEffect(()=>{             //Use Effect для перевірки отрмання даних на верхній рівень
+        console.log('testInfoFilter');
+        console.log(testInfoFilter);
+        if(!testInfoFilter.length == 0 )
+        {
+            saveTest(testInfoFilter);
+        }
        
         
-    // },[testInfoFilter])
+    },[testInfoFilter])
 
 
     function saveTest(testInfoFilter) // Функція збереження тесту в MongoDB
@@ -129,18 +128,11 @@ function ConstructorTests() {
     }
     
    
-
-
-    // useEffect(()=>{             // UseEffect який при рендерінгу створює один блок питання по замовчуванню
-    //     const id = uuidv4();
-    //     setNumberBlocks(prev=> ([...prev, id]));
-    // },[])
-
     
    
     return (
         <div className={ConstructStyles.ConstructorTests}>
-            <h2>Констуктор тестів</h2>
+            <h2>{userTestInfo.testName}</h2>
 
             { isLoaded ? <div>
 
@@ -154,8 +146,6 @@ function ConstructorTests() {
                 </div>
 
             </div> : <div>Wait a minute</div>}
-
-            <p ref={errorParagraph} style={{ color: 'red' }}></p>
         </div>
     )
 }

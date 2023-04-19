@@ -15,12 +15,6 @@ function TestBlock({questionInfo ,GetValueMainState, index, setgetValueMain,Save
 
 
 
-  
-    function getQuestionValue(e)            // Функція для витягування питання 
-    {
-        setQuestionInput(e.target.value);
-    }
-
 
 
 
@@ -78,11 +72,11 @@ function TestBlock({questionInfo ,GetValueMainState, index, setgetValueMain,Save
         <div className={styles.blockTests}>
                 <h3>Питання №{index+1}</h3>
                  
-                <input onChange={(e)=>{getQuestionValue(e)}} placeholder={questionInfo.question} className={styles.mainQuestion} />
+                <input  placeholder={questionInfo.question} className={styles.mainQuestion} />
                 
 
-                {numberOfAnswers.map((id, index) =>{
-                    return(<AnswerInput index ={index+1} answerblockId={id} key={id} Show={Show} GetValue={GetValue} SetShow={SetShow}/>)
+                {numberOfAnswers.map((question, index) =>{
+                    return(<AnswerInput question={question} index ={index+1}  key={index} Show={Show} GetValue={GetValue} SetShow={SetShow}/>)
                 })}
                 
 

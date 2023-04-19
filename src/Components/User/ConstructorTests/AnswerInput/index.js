@@ -5,10 +5,10 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from './style.module.css';
 
 
-function AnswerInput({answerblockId, Show,GetValue, SetShow, index}) {
+function AnswerInput({question, Show,GetValue, SetShow, index}) {
 
 
-    const [inputValue, setInputValue]=useState('');
+    const [inputValue, setInputValue]=useState(question);
     const [rightAnswer, setRightAnswer] = useState(false);
 
     function SetCheckBox()      //Функція яка буде отримувати значення true або false і ставати їх в State в залежності чи обраний checkBox тобто answer
@@ -24,10 +24,6 @@ function AnswerInput({answerblockId, Show,GetValue, SetShow, index}) {
         
     }
     
-    function NewValue(e)            // функція яка при вводі тексту в input записує його значення в useState для того щоб його можна було витягнути
-    {
-        setInputValue(e.target.value);
-    }
     
 
     const answerRef = useRef();
@@ -45,8 +41,8 @@ function AnswerInput({answerblockId, Show,GetValue, SetShow, index}) {
     return (
         <div  className={styles.AnswerVariants_and_checkbox}>
 
-            <input onClick={SetCheckBox} type='checkbox' label={index} className={styles.checkbox} name='mycheckbox' />
-            <input onChange={e =>{NewValue(e)}} value={inputValue} type='text'  ref={answerRef}   placeholder='Варіант відповіді' className={styles.answerVariants} />
+            <input  onClick={SetCheckBox} type='checkbox' label={index} className={styles.checkbox} name='mycheckbox' />
+            <input readOnly value={question} type='text'  ref={answerRef}   className={styles.answerVariants} />
 
         </div>
     )
