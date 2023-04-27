@@ -16,7 +16,7 @@ function ConstructorTests() {
     const userContext = useContext(UserContext);
     const [userTestInfo, setUserTestInfo] = useState();  // State для витягання даних тесту з БД і відображення їх в конструкторі
     const [isLoaded, setIsLoaded] = useState(false); 
-    const [testMark, setTestMark] = useState(0);
+
 
 
 
@@ -133,7 +133,7 @@ function ConstructorTests() {
         })
 
         
-    
+
 
         axios.post('http://localhost:8080/test-evaluation', {
             testCode: userTestInfo.test_code,
@@ -141,21 +141,28 @@ function ConstructorTests() {
         }).then(response =>{
             console.log(response);
             
-            const TestMark = response.data.totalMark;
-            setTestMark(TestMark);
+            console.log('response', response.data.totalMark);
+            let TestMark = response.data.totalMark;
+
+            axios.patch('http://localhost:8080/save-test', {
+                test_code: userContext.testUserCode,
+                mark: TestMark,
+                completed: 100
+            }).then(response =>{
+                console.log(response);
+            }).catch(error =>{
+                console.log(error);
+            })
+    
+
+
         }).catch(error =>{
             console.log(error);
         })
 
-        axios.patch('http://localhost:8080/save-test/', {
-            test_code: userContext.testUserCode,
-            mark: testMark,
-            completed: 100
-        }).then(response =>{
-            console.log(response);
-        }).catch(error =>{
-            console.log(error);
-        })
+
+        
+
 
 
 
