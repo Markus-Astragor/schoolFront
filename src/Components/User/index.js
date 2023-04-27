@@ -13,6 +13,7 @@ import { Routes, useNavigate } from "react-router-dom";
 import UserTestConstructor from './ConstructorTests/ConstructorTests.js';
 import UserContext from "../UseContext/userContext";
 import burgerIcon from '../../images/BurgerMenu/burger.png';
+import Testresult from "./TestResult";
 import axios from "axios";
 
 
@@ -24,6 +25,7 @@ function UserPage() {
 
     const [userName, setUserName] = useState('Ostap Sidoryak');
     const [testUserCode, setTestUserCode] = useState();
+    const [testInfo, setTestInfo] = useState();
 
     function GetUserInfo(userToken) {
 
@@ -58,7 +60,7 @@ function UserPage() {
 
     return (
 
-        <UserContext.Provider value={{testUserCode: testUserCode, setTestUserCode: setTestUserCode}}>
+        <UserContext.Provider value={{testUserCode: testUserCode, setTestUserCode: setTestUserCode, testInfo: testInfo, setTestInfo: setTestInfo}}>
             <div className={styles.user_page}>
 
                 <div onClick={() => { setIsOpen(false) }} className={isOpen ? styles.overlayer : styles.overlayer_hidden}>
@@ -80,6 +82,8 @@ function UserPage() {
                         <Route path="materials" element={<Statistic_Student />} />
                         <Route path="math" element={<Statistic_Student />} />
                         <Route path="test" element={<UserTestConstructor />} />
+                        <Route path="test-result" element={<Testresult/>}/>
+                        
 
                     </Routes>
 

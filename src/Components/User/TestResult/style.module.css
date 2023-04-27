@@ -1,0 +1,17 @@
+.resultTest{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.resultTest>div{
+    margin-bottom: 40px;
+    width: 500px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
