@@ -143,22 +143,25 @@ function ConstructorTests() {
             
             console.log('response', response.data.totalMark);
             let TestMark = response.data.totalMark;
-
+            
+            
             axios.patch('http://localhost:8080/save-test', {
                 test_code: userContext.testUserCode,
                 mark: TestMark,
-                completed: 100
+                completed: 100,
+                token: parsedToken
             }).then(response =>{
                 console.log(response);
             }).catch(error =>{
                 console.log(error);
             })
-    
 
 
         }).catch(error =>{
             console.log(error);
         })
+
+
 
 
         
