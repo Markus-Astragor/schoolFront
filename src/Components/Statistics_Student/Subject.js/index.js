@@ -3,13 +3,13 @@
 import React from "react";
 import styles from './style.module.css';
 
-function Subject(props)
+function Subject({subjectName, getTestsBySubject})
 {
 
 
     return(
-        <div className={styles.subject_button}>
-            {props.subjectName}
+        <div onClick={() =>getTestsBySubject(subjectName)} className={styles.subject_button}>
+            {subjectName}
         </div>
     )
 }
